@@ -169,6 +169,8 @@ button { font-family: inherit; }
   align-items: center;
   gap: 6px;
   padding: 7px 12px 7px 7px;
+  max-width: 160px;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px) saturate(1.6);
   -webkit-backdrop-filter: blur(18px) saturate(1.6);
@@ -189,11 +191,20 @@ button { font-family: inherit; }
 .home-chip-mark {
   width: 22px;
   height: 22px;
-  flex-shrink: 0;
+  flex: 0 0 22px;
+  overflow: hidden;
   display: block;
+  line-height: 0;
 }
 
-.home-chip-mark svg { width: 100%; height: 100%; display: block; }
+/* Firefox sizes SVGs with height:100% against the viewport when the
+   parent is position:fixed — pin the icon to 22px instead. */
+.home-chip-mark svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  overflow: visible;
+}
 
 @media (min-width: 769px) {
   #app.has-sidebar .home-chip {
