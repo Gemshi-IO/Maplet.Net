@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Maplet — Save, Organize &amp; Share Your Favorite Places</title>
+  <meta name="description" content="Maplet is a privacy-first iOS app for saving, organizing, and sharing your favorite places and travel folders — with instant links and zero accounts." />
+  <meta name="theme-color" content="#F5F5F7" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <!-- Social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maplet — Save, Organize &amp; Share Your Favorite Places" />
+  <meta property="og:description" content="Save your favorite spots, build travel folders, and share them instantly with a link. No account, no tracking, fully offline." />
+  <meta property="og:image" content="images/MapletScr1.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://apps.apple.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================================================================
+       Header
+       =================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2C10 2 5.5 6.8 5.5 12.6c0 7.8 9 16.4 10 17.3.3.3.7.3 1 0 1-.9 10-9.5 10-17.3C26.5 6.8 22 2 16 2Z" fill="url(#pinGradient)"/>
+            <circle cx="16" cy="12.5" r="4.5" fill="#fff"/>
+            <defs>
+              <linearGradient id="pinGradient" x1="5.5" y1="2" x2="26.5" y2="29.9" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF8A5B"/>
+                <stop offset="1" stop-color="#FF5A36"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">Maplet</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#features">Features</a>
+        <a href="#share-showcase">Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+          Download App
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =================================================================
+         Hero
+         ================================================================= -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Maplet for iOS</p>
+          <h1>Saving locations,<br>made effortless.</h1>
+          <p class="hero-sub">
+            Organize your favorite spots into color-coded folders, add notes and ratings,
+            then share the whole trip with one lightweight link — no account required.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-appstore" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
+              </svg>
+              <span class="appstore-text">
+                <small>Download on the</small>
+                App Store
+              </span>
+            </a>
+
+            <a class="btn btn-ghost" href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 3H21v7.5M21 3 10 14M10 5H5.5A2.5 2.5 0 0 0 3 7.5V18a2.5 2.5 0 0 0 2.5 2.5H16a2.5 2.5 0 0 0 2.5-2.5v-4.5"/>
+              </svg>
+              View a Sample Shared Folder
+            </a>
+          </div>
+
+          <p class="hero-trust">Free download · No account required · Works fully offline</p>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="hero-visual-card">
+            <img src="images/MapletScr1.webp" alt="Maplet app showing saved locations, a Saved Places folder list, the Compass Target tool, and a multi-stop route on iPhone" width="1728" height="822" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Feature grid
+         ================================================================= -->
+    <section class="features" id="features">
+      <div class="wrap">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Why Maplet</p>
+          <h2>Everything you need to remember everywhere.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" style="--icon-tint:#FF6B35">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5A1.5 1.5 0 0 1 4.5 6h5.379a1.5 1.5 0 0 1 1.06.44l1.122 1.12a1.5 1.5 0 0 0 1.06.44H19.5A1.5 1.5 0 0 1 21 9.5v8A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-10Z"/>
+                <circle cx="15.5" cy="14" r="1.4" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3>Organize &amp; tag</h3>
+            <p>Sort spots into color-coded folders and categories, add notes, ratings, and mark places as visited as you go.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" style="--icon-tint:#0A84FF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5 20 4M15 3.5h5.5V9M11 5.5H7A4 4 0 0 0 3 9.5v7A4 4 0 0 0 7 20.5h7a4 4 0 0 0 4-4v-4"/>
+              </svg>
+            </div>
+            <h3>Instant share</h3>
+            <p>Share an entire folder as one ultra-compact link via <strong>maplet.net/share</strong> — friends see a live map instantly, no app required.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" style="--icon-tint:#30B04E">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.75l7.25 3.2v5.42c0 4.53-3.06 7.9-7.25 9.88-4.19-1.98-7.25-5.35-7.25-9.88V5.95L12 2.75Z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.25 12.25l2 2 3.5-4"/>
+              </svg>
+            </div>
+            <h3>Privacy first</h3>
+            <p>Your data stays on your device. No account creation, no aggressive tracking, no server ever sees your saved places.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" style="--icon-tint:#8E5CF7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 18.5a4 4 0 0 1-1-7.88 5.5 5.5 0 0 1 10.72-2A4.5 4.5 0 0 1 17.5 17.5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 11v6.5M9.5 15l2.5-2.5 2.5 2.5"/>
+              </svg>
+            </div>
+            <h3>Offline ready</h3>
+            <p>Access saved places, notes, and coordinates anytime — on a plane, off-grid, or anywhere signal can't reach.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Alternating showcase rows — real product moments
+         ================================================================= -->
+    <section class="showcase">
+      <div class="wrap">
+        <div class="showcase-row" data-reveal>
+          <div class="showcase-copy">
+            <p class="eyebrow">Trip planning</p>
+            <h2>Plan multi-stop road trips in minutes.</h2>
+            <p>
+              Pick locations from any folder and let Maplet build an optimized driving route between them,
+              complete with distance, duration, and step-by-step stops — then track your progress as you go.
+            </p>
+            <ul class="checklist">
+              <li>Optimized stop ordering for multi-location trips</li>
+              <li>Live distance, ETA, and journey progress tracking</li>
+              <li>Works with Apple Maps, Google Maps, or Waze</li>
+            </ul>
+          </div>
+          <div class="showcase-media">
+            <img src="images/MapletScr4.webp" alt="Maplet multi-route planner, an optimized driving route, and journey progress tracking screens" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="showcase-row reverse" data-reveal>
+          <div class="showcase-copy">
+            <p class="eyebrow">Offline navigation</p>
+            <h2>Find your way, even without signal.</h2>
+            <p>
+              Compass Target points you toward any saved location by distance and bearing — no cell service,
+              no data connection, no problem. Perfect for hiking trails, campgrounds, and remote roadtrips.
+            </p>
+            <ul class="checklist">
+              <li>Real-time distance &amp; bearing to up to 4 locations</li>
+              <li>Fully functional with no internet connection</li>
+              <li>Built-in sunrise, sunset, and elevation readouts</li>
+            </ul>
+          </div>
+          <div class="showcase-media">
+            <img src="images/MapletScr5.webp" alt="Maplet Compass Target tool showing distance and bearing to saved locations, alongside the live map view" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Universal Link showcase
+         ================================================================= -->
+    <section class="share-showcase" id="share-showcase">
+      <div class="wrap share-showcase-inner">
+        <div class="share-copy" data-reveal>
+          <p class="eyebrow">maplet.net/share</p>
+          <h2>Sharing a folder shouldn't require the other person to install anything.</h2>
+          <p>
+            Tap "Share Folder" and Maplet compresses your entire trip — every pin, note, and rating — into one
+            short link. Open it on any phone or computer for an instant, interactive map. If the recipient has
+            Maplet installed, it opens right in the app.
+          </p>
+
+          <ul class="checklist">
+            <li>Encoded entirely on your device — nothing is uploaded to a server</li>
+            <li>No account or sign-in needed on either end</li>
+            <li>Falls back to a full web preview if the app isn't installed</li>
+          </ul>
+
+          <a class="btn btn-primary" href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">
+            Try the live demo
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="share-media" data-reveal>
+          <div class="share-media-frame">
+            <img src="images/MapletScr6.webp" alt="Maplet's Share Folder screen showing the Share via Deep Link option, next to the Export Options and Batch Import screens" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         Closing CTA
+         ================================================================= -->
+    <section class="cta-band">
+      <div class="wrap cta-inner" data-reveal>
+        <h2>Start saving what matters.</h2>
+        <p>Free to download. Your places, your device, your data.</p>
+        <a class="btn btn-light" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
+          </svg>
+          Download on the App Store
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       Footer
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C10 2 5.5 6.8 5.5 12.6c0 7.8 9 16.4 10 17.3.3.3.7.3 1 0 1-.9 10-9.5 10-17.3C26.5 6.8 22 2 16 2Z" fill="url(#pinGradientFooter)"/>
+              <circle cx="16" cy="12.5" r="4.5" fill="#fff"/>
+              <defs>
+                <linearGradient id="pinGradientFooter" x1="5.5" y1="2" x2="26.5" y2="29.9" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF8A5B"/>
+                  <stop offset="1" stop-color="#FF5A36"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand-name">Maplet</span>
+        </a>
+        <p>Save, organize, and share your favorite places — privately.</p>
+        <a class="btn btn-appstore btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
+          </svg>
+          <span class="appstore-text"><small>Download on the</small>App Store</span>
+        </a>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#share-showcase">Sharing</a>
+          <a href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">See a sample shared folder</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <p>© <span id="year"></span> Maplet. All rights reserved.</p>
+      <p class="footer-credit">
+        Crafted by
+        <img src="images/GemshiLogoDark.png" alt="Gemshi" width="16" height="16" />
+        Gemshi
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["BT4K8UQD9N.com.Gemshi.Maplet"],
+        "components": [
+          { "/": "/share", "comment": "Matches the folder-share landing page" },
+          { "/": "/share/*", "comment": "Matches /share with any trailing path segments" }
+        ]
+      }
+    ]
+  }
+}

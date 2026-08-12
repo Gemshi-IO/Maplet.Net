@@ -1,0 +1,7 @@
+# Cloudflare Pages custom headers.
+# Apple requires the AASA file as application/json, no redirects, no file extension.
+# See DeepLinkSpecification.md §8.
+
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
