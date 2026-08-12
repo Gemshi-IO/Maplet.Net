@@ -168,18 +168,21 @@
     els.loadingState.hidden = false;
     els.errorState.hidden = true;
     els.layout.hidden = true;
+    document.getElementById('app').classList.remove('has-sidebar');
   }
 
   function showError() {
     els.loadingState.hidden = true;
     els.errorState.hidden = false;
     els.layout.hidden = true;
+    document.getElementById('app').classList.remove('has-sidebar');
   }
 
   function showApp() {
     els.loadingState.hidden = true;
     els.errorState.hidden = true;
     els.layout.hidden = false;
+    document.getElementById('app').classList.add('has-sidebar');
   }
 
   function applyAccentColor(hex) {

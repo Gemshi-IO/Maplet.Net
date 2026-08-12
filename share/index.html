@@ -34,6 +34,22 @@
 
   <div id="app">
 
+    <a class="home-chip" href="../index.html" aria-label="Maplet home">
+      <span class="home-chip-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C10 2 5.5 6.8 5.5 12.6c0 7.8 9 16.4 10 17.3.3.3.7.3 1 0 1-.9 10-9.5 10-17.3C26.5 6.8 22 2 16 2Z" fill="url(#sharePinGradient)"/>
+          <circle cx="16" cy="12.5" r="4.5" fill="#fff"/>
+          <defs>
+            <linearGradient id="sharePinGradient" x1="5.5" y1="2" x2="26.5" y2="29.9" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF8A5B"/>
+              <stop offset="1" stop-color="#FF5A36"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      Maplet
+    </a>
+
     <!-- Loading state -->
     <div id="loadingState" class="state-screen">
       <div class="spinner" aria-hidden="true"></div>
@@ -51,6 +67,7 @@
       <h1>Folder not found or link expired</h1>
       <p class="state-subtext">This Maplet share link looks broken or incomplete. Ask your friend to resend it, or grab the app to create your own.</p>
       <a id="errorAppStoreLink" class="btn btn-primary" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">Get Maplet on the App Store</a>
+      <a class="btn btn-ghost" href="../index.html">Back to Maplet</a>
     </div>
 
     <!-- Main layout (populated by script.js once decoded) -->
@@ -82,6 +99,14 @@
         </header>
 
         <div id="locationList" class="location-list" role="list"></div>
+
+        <p class="privacy-note">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3 5.5 5.8v5.1c0 4.1 2.8 7.2 6.5 9 3.7-1.8 6.5-4.9 6.5-9V5.8L12 3Z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="m9.2 12 1.9 1.9 3.7-3.8"/>
+          </svg>
+          <span>This folder isn’t stored on any Maplet server — we can’t see it. It’s decoded in your browser from the link. Anyone with the link can view it.</span>
+        </p>
       </aside>
 
       <div class="map-wrap">

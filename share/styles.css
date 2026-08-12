@@ -149,6 +149,84 @@ button { font-family: inherit; }
 
 .btn-block { width: 100%; }
 
+.state-screen .btn-ghost {
+  margin-top: 8px;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Home chip — always-on link back to maplet.net                           */
+/* ---------------------------------------------------------------------- */
+
+.home-chip {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px 7px 7px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-chip:hover { box-shadow: var(--shadow-lg); }
+.home-chip:active { transform: scale(0.97); }
+
+.home-chip-mark {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.home-chip-mark svg { width: 100%; height: 100%; display: block; }
+
+@media (min-width: 769px) {
+  #app.has-sidebar .home-chip {
+    left: calc(var(--sidebar-width) + 16px);
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Privacy disclaimer — sidebar footer                                     */
+/* ---------------------------------------------------------------------- */
+
+.privacy-note {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 16px calc(14px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-tertiary);
+}
+
+.privacy-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--text-tertiary);
+}
+
+.privacy-note span { min-width: 0; }
+
 /* ---------------------------------------------------------------------- */
 /* Layout — desktop split screen                                           */
 /* ---------------------------------------------------------------------- */
@@ -224,7 +302,7 @@ button { font-family: inherit; }
 .location-list {
   flex: 1;
   overflow-y: auto;
-  padding: 12px 16px 32px;
+  padding: 12px 16px 16px;
   -webkit-overflow-scrolling: touch;
 }
 
