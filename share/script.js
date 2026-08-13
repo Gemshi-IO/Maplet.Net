@@ -33,8 +33,11 @@
     folderMeta: document.getElementById('folderMeta'),
     locationList: document.getElementById('locationList'),
     openInAppBtn: document.getElementById('openInAppBtn'),
+    mapsPref: document.getElementById('mapsPref'),
     themeColorMeta: document.getElementById('themeColorMeta'),
   };
+
+  const MAPS_PREF_KEY = 'maplet.mapsApp';
 
   // ------------------------------------------------------------------------
   // Decoding pipeline (DeepLinkSpecification.md §2-4)
@@ -128,11 +131,59 @@
     return isIOS || isMac;
   }
 
-  function directionsUrl(loc) {
-    const dest = `${loc.latitude},${loc.longitude}`;
-    return isApplePlatform()
-      ? `https://maps.apple.com/?daddr=${dest}&dirflg=d`
-      : `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
+  function getMapsPref() {
+    try {
+      const stored = localStorage.getItem(MAPS_PREF_KEY);
+      if (stored === 'apple' || stored === 'google') return stored;
+    } catch {
+      /* private mode / blocked storage */
+    }
+    return isApplePlatform() ? 'apple' : 'google';
+  }
+
+  function setMapsPref(value) {
+    if (value !== 'apple' && value !== 'google') return;
+    try {
+      localStorage.setItem(MAPS_PREF_KEY, value);
+    } catch {
+      /* ignore */
+    }
+    syncMapsPrefUI();
+    refreshDirectionsLinks();
+  }
+
+  function syncMapsPrefUI() {
+    const current = getMapsPref();
+    if (!els.mapsPref) return;
+    els.mapsPref.querySelectorAll('button[data-maps]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.maps === current));
+    });
+  }
+
+  function directionsUrl(lat, lon) {
+    const dest = `${lat},${lon}`;
+    return getMapsPref() === 'apple'
+      ? `https://maps.apple.com/?daddr=${encodeURIComponent(dest)}&dirflg=d`
+      : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(dest)}`;
+  }
+
+  function refreshDirectionsLinks() {
+    document.querySelectorAll('.directions-link').forEach((a) => {
+      const lat = a.dataset.lat;
+      const lon = a.dataset.lon;
+      if (lat && lon) a.href = directionsUrl(lat, lon);
+    });
+  }
+
+  function setupMapsPref() {
+    if (!els.mapsPref) return;
+    syncMapsPrefUI();
+    els.mapsPref.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-maps]');
+      if (!btn) return;
+      e.preventDefault();
+      setMapsPref(btn.dataset.maps);
+    });
   }
 
   function buildAddress(loc) {
@@ -274,9 +325,16 @@
 
     const actions = document.createElement('div');
     actions.className = 'card-actions';
-    actions.appendChild(
-      createIconLink(directionsUrl(loc), 'Directions', DIRECTIONS_ICON, { target: '_blank', rel: 'noopener' })
+    const dirLink = createIconLink(
+      directionsUrl(loc.latitude, loc.longitude),
+      'Directions',
+      DIRECTIONS_ICON,
+      { target: '_blank', rel: 'noopener' }
     );
+    dirLink.classList.add('directions-link');
+    dirLink.dataset.lat = String(loc.latitude);
+    dirLink.dataset.lon = String(loc.longitude);
+    actions.appendChild(dirLink);
     if (loc.telephoneNumber) {
       actions.appendChild(createIconLink(`tel:${loc.telephoneNumber}`, 'Contact', PHONE_ICON));
     }
@@ -433,59 +491,135 @@
 
   function setupBottomSheet() {
     const sheet = els.sidebar;
-    const handle = els.sheetHandle;
+    const list = els.locationList;
+    const DRAG_SLOP_PX = 10;
+    const FLICK_VELOCITY = 0.45; // px / ms
+
+    let pointerId = null;
     let dragging = false;
-    let dragStartY = 0;
-    let dragStartOffset = 0;
+    let tracking = false;
+    let startY = 0;
+    let startOffset = 0;
+    let lastY = 0;
+    let lastT = 0;
+    let velocity = 0;
+    let startedOnChrome = false;
+    let startedOnList = false;
 
     function collapsedOffsetPx() {
-      return sheet.getBoundingClientRect().height - SHEET_PEEK_PX;
+      return Math.max(0, sheet.getBoundingClientRect().height - SHEET_PEEK_PX);
     }
 
     function currentOffsetPx() {
       return sheet.classList.contains('is-expanded') ? 0 : collapsedOffsetPx();
     }
 
-    function onDragStart(clientY) {
-      if (!isMobileLayout()) return;
-      dragging = true;
-      dragStartY = clientY;
-      dragStartOffset = currentOffsetPx();
-      sheet.classList.add('is-dragging');
+    function isInteractive(target) {
+      return Boolean(target.closest('a, button, input, textarea, select, label'));
     }
 
-    function onDragMove(clientY) {
-      if (!dragging) return;
-      const delta = clientY - dragStartY;
-      const maxOffset = collapsedOffsetPx();
-      const next = Math.min(maxOffset, Math.max(0, dragStartOffset + delta));
+    function isChrome(target) {
+      return Boolean(target.closest('#sheetHandle, .sidebar-header, .maps-pref'));
+    }
+
+    function applyOffset(px) {
+      const max = collapsedOffsetPx();
+      const next = Math.min(max, Math.max(0, px));
       sheet.style.transform = `translateY(${next}px)`;
+      return next;
     }
 
-    function onDragEnd(clientY) {
-      if (!dragging) return;
+    function settle(expanded) {
       dragging = false;
+      tracking = false;
+      pointerId = null;
       sheet.classList.remove('is-dragging');
       sheet.style.transform = '';
-
-      const delta = clientY - dragStartY;
-      if (Math.abs(delta) < 6) {
-        // Treat as a tap on the handle rather than a drag.
-        sheet.classList.toggle('is-expanded');
-        return;
-      }
-      const maxOffset = collapsedOffsetPx();
-      const finalOffset = Math.min(maxOffset, Math.max(0, dragStartOffset + delta));
-      sheet.classList.toggle('is-expanded', finalOffset < maxOffset * 0.5);
+      sheet.classList.toggle('is-expanded', expanded);
+      if (!expanded) list.scrollTop = 0;
     }
 
-    handle.addEventListener('pointerdown', (e) => {
-      handle.setPointerCapture(e.pointerId);
-      onDragStart(e.clientY);
-    });
-    handle.addEventListener('pointermove', (e) => onDragMove(e.clientY));
-    handle.addEventListener('pointerup', (e) => onDragEnd(e.clientY));
-    handle.addEventListener('pointercancel', (e) => onDragEnd(e.clientY));
+    function beginDrag(e) {
+      dragging = true;
+      startOffset = currentOffsetPx();
+      sheet.classList.add('is-dragging');
+      try {
+        sheet.setPointerCapture(e.pointerId);
+      } catch {
+        /* already captured or unsupported */
+      }
+    }
+
+    function onPointerDown(e) {
+      if (!isMobileLayout() || e.button) return;
+      if (isInteractive(e.target)) return;
+
+      pointerId = e.pointerId;
+      tracking = true;
+      dragging = false;
+      startY = lastY = e.clientY;
+      lastT = performance.now();
+      velocity = 0;
+      startedOnChrome = isChrome(e.target);
+      startedOnList = Boolean(e.target.closest('.location-list'));
+    }
+
+    function onPointerMove(e) {
+      if (!tracking || e.pointerId !== pointerId) return;
+
+      const now = performance.now();
+      const dy = e.clientY - startY;
+      const dt = Math.max(1, now - lastT);
+      velocity = (e.clientY - lastY) / dt;
+      lastY = e.clientY;
+      lastT = now;
+
+      if (!dragging) {
+        if (Math.abs(dy) < DRAG_SLOP_PX) return;
+
+        const expanded = sheet.classList.contains('is-expanded');
+
+        if (startedOnChrome || !expanded) {
+          beginDrag(e);
+        } else if (startedOnList && dy > 0 && list.scrollTop <= 1) {
+          beginDrag(e);
+        } else {
+          tracking = false;
+          return;
+        }
+      }
+
+      if (e.cancelable) e.preventDefault();
+      applyOffset(startOffset + (e.clientY - startY));
+    }
+
+    function onPointerEnd(e) {
+      if (!tracking || e.pointerId !== pointerId) return;
+
+      const dy = e.clientY - startY;
+      const expanded = sheet.classList.contains('is-expanded');
+
+      if (!dragging) {
+        tracking = false;
+        pointerId = null;
+        if (Math.abs(dy) < DRAG_SLOP_PX && startedOnChrome) {
+          settle(!expanded);
+        }
+        return;
+      }
+
+      const max = collapsedOffsetPx();
+      const finalOffset = Math.min(max, Math.max(0, startOffset + dy));
+      const flickedOpen = velocity < -FLICK_VELOCITY;
+      const flickedClosed = velocity > FLICK_VELOCITY;
+      const shouldExpand = flickedOpen || (!flickedClosed && finalOffset < max * 0.45);
+      settle(shouldExpand);
+    }
+
+    sheet.addEventListener('pointerdown', onPointerDown);
+    sheet.addEventListener('pointermove', onPointerMove, { passive: false });
+    sheet.addEventListener('pointerup', onPointerEnd);
+    sheet.addEventListener('pointercancel', onPointerEnd);
   }
 
   // ------------------------------------------------------------------------
@@ -497,6 +631,7 @@
     renderHeader(model);
 
     setupBottomSheet();
+    setupMapsPref();
     showApp();
 
     // MapLibre measures its container at construct time. The layout starts

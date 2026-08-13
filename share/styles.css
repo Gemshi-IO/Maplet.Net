@@ -310,6 +310,64 @@ button { font-family: inherit; }
 
 .header-actions .btn-primary { flex: 1; }
 
+/* ---------------------------------------------------------------------- */
+/* Maps preference — iOS segmented control                                 */
+/* ---------------------------------------------------------------------- */
+
+.maps-pref {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--card-bg);
+}
+
+.maps-pref-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.seg {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  padding: 2px;
+  background: var(--bg);
+  border-radius: 9px;
+}
+
+.seg button {
+  flex: 1;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.seg button[aria-pressed="true"] {
+  background: var(--card-bg);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.seg button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
 .location-list {
   flex: 1;
   overflow-y: auto;
@@ -540,9 +598,9 @@ button { font-family: inherit; }
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.18);
     transform: translateY(calc(100% - var(--sheet-peek)));
-    transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
-    touch-action: none;
+    transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
     z-index: 40;
+    will-change: transform;
   }
 
   .sidebar.is-dragging { transition: none; }
@@ -551,23 +609,37 @@ button { font-family: inherit; }
   .sheet-handle {
     display: flex;
     justify-content: center;
-    padding: 8px 0 4px;
+    align-items: center;
+    padding: 10px 0 6px;
+    min-height: 28px;
     flex-shrink: 0;
     cursor: grab;
+    touch-action: none;
   }
 
   .sheet-handle span {
-    width: 36px;
+    width: 40px;
     height: 5px;
     border-radius: 100px;
-    background: var(--border);
+    background: #d2d2d7;
+  }
+
+  .sidebar-header,
+  .maps-pref {
+    touch-action: none;
   }
 
   .sidebar-header { padding: 4px 20px 14px; }
 
   .folder-title-row { margin-bottom: 12px; }
 
-  .location-list { touch-action: pan-y; }
+  /* Keep the collapsed peek to title + CTAs; picker appears when expanded. */
+  .sidebar:not(.is-expanded) .maps-pref { display: none; }
+
+  .location-list {
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+  }
 }
 
 @media (max-width: 420px) {
