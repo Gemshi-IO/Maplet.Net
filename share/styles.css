@@ -539,12 +539,23 @@ button { font-family: inherit; }
   width: 30px;
   height: 40px;
   cursor: pointer;
+  /* MapLibre positions this root. No transitions/transforms here. */
+}
+
+.marker-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
   transform-origin: bottom center;
   transition: transform 0.18s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
-.map-marker svg { display: block; width: 100%; height: 100%; }
+.marker-inner svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 .map-marker .marker-pin-fill { fill: var(--accent); }
 
@@ -560,9 +571,12 @@ button { font-family: inherit; }
   pointer-events: none;
 }
 
-.map-marker:hover,
-.map-marker.is-highlighted {
+.map-marker:hover .marker-inner,
+.map-marker.is-highlighted .marker-inner {
   transform: scale(1.18);
+}
+
+.map-marker.is-highlighted {
   z-index: 30;
 }
 

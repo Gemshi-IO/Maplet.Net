@@ -346,14 +346,19 @@
   function buildMarkerElement(index) {
     const el = document.createElement('div');
     el.className = 'map-marker';
-    el.style.position = 'relative';
     el.dataset.index = String(index);
-    el.innerHTML = PIN_SVG_MARKUP;
+    // Do not set position:relative on this root — MapLibre needs it absolute
+    // so markers stay pinned to lat/lng across zoom levels.
+
+    const inner = document.createElement('div');
+    inner.className = 'marker-inner';
+    inner.innerHTML = PIN_SVG_MARKUP;
 
     const number = document.createElement('span');
     number.className = 'marker-number';
     number.textContent = String(index + 1);
-    el.appendChild(number);
+    inner.appendChild(number);
+    el.appendChild(inner);
 
     return el;
   }
