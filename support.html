@@ -3,10 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Help &amp; Support — Maplet</title>
-  <meta name="description" content="Complete guide to saving, organizing, planning, and sharing locations with Maplet." />
+  <title>Maplet User Guide &amp; Support: Offline Maps, Routes &amp; GPX Import</title>
+  <meta name="description" content="Complete user guide for Maplet. Learn how to save waypoints, import GPX/KML/CSV files, plan multi-stop routes, and share private map folders on iOS." />
   <meta name="theme-color" content="#F5F5F7" />
+
+  <link rel="canonical" href="https://maplet.net/support.html" />
   <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://maplet.net/support.html" />
+  <meta property="og:title" content="Maplet User Guide &amp; Support" />
+  <meta property="og:description" content="Step-by-step guides for offline location bookmarking, GPX/KML importing, multi-stop route planning, and folder sharing." />
+  <meta property="og:image" content="https://maplet.net/images/MapletScr1.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What happens if I reach the free location limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You won’t be able to save new locations until you delete some or upgrade to Pro for unlimited saves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I restore my Pro subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to the Pro/Upgrade screen and tap Restore Purchases. Make sure you’re signed in with the same Apple ID you used to subscribe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All your personal data is stored locally and synced via your private iCloud account. Folder share links are encoded on-device in the URL. Nothing is uploaded to a Maplet server. Anonymous analytics and crash data may be sent to Firebase; see the Privacy Policy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Maplet keep shared folder data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Folder share links are compressed and encoded directly inside the URL on your device. The shared data is never stored on external servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I transfer my data to a new device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sign in to iCloud on your new device and install Maplet. Your data will sync automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I accidentally delete a location or folder?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deletions are permanent. There’s no undo, so please double-check before deleting. If you delete a folder and it still appears, restart the app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Maplet offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can view, organize, and manage saved locations offline without an active internet connection. Some features (map previews or iCloud sync) require internet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What map apps are supported for sharing/opening locations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apple Maps, Google Maps, Waze, HERE, Citymapper, Gaode, Yandex, 2GIS, and Maps.me."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I cancel my subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open your device’s Settings, tap your Apple ID, go to Subscriptions, and select Maplet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I share folders with others?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, two ways: (1) a Universal Link at https://maplet.net/share (up to 30 locations, encoded on-device, opens as a web map or in the app if installed; photos and voice notes are not included). (2) a .maplet file with complete data including photos and voice notes, and no location limit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does someone need Maplet installed to open a shared folder link?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Share links open in any standard web browser as an interactive map preview. If the recipient has Maplet installed, iOS can open the folder directly in the app via Universal Links."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file formats does Maplet support for importing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maplet supports importing CSV (spreadsheets), GPX (GPS tracks and waypoints), and KML (Google Earth) files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What export formats are available in Maplet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Locations can be exported to PDF documents (ideal for printing with notes and photos) or CSV files for backups and data transfers. Both can include map links and customizable fields."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s the difference between temporary and green flags?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Temporary flags are cleared when the app restarts or when you press the clear flag button. Green flags are persistent, remain after restart, and can later be saved as a location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my data if I uninstall Maplet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If iCloud sync is enabled, your data remains in iCloud and can be restored when you reinstall. If not, local data will be lost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Maplet without location permissions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can save locations manually by searching for addresses, but distance calculation, current-location display, and automatic location saving require location permissions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s included in the Pro subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlimited location saves, Shared Folders as .maplet files, Journey Planner & Checklists, Multi-Route Planner, Batch Import (CSV/GPX/KML), and Custom Export (PDF/CSV)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my iCloud sync isn’t working?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check that you’re signed into iCloud, have a stable internet connection, and iCloud Drive is enabled for Maplet. Try restarting the app or your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I see duplicate folders or categories?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Restart the app. Maplet will automatically detect and fix these duplicates during startup."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -46,7 +217,7 @@
     <div class="wrap doc-hero">
       <p class="eyebrow">Support</p>
       <h1>Help &amp; User Guide</h1>
-      <p>Your complete guide to saving, planning, and sharing locations with Maplet. Need more help? Email <a href="mailto:gemshi@me.com">gemshi@me.com</a>.</p>
+      <p>How to save, plan, and share locations in Maplet. Questions? Email <a href="mailto:gemshi@me.com">gemshi@me.com</a>.</p>
     </div>
 
     <div class="wrap doc-layout">
@@ -54,21 +225,21 @@
         <h2>Contents</h2>
         <a href="#welcome">Welcome</a>
         <a href="#home">Home Screen</a>
-        <a href="#saving">Saving a Location</a>
+        <a href="#saving">How to Save Locations</a>
         <a href="#viewing">Viewing Saved Locations</a>
         <a href="#editing">Editing a Location</a>
         <a href="#distance">Viewing Distance</a>
-        <a href="#sharing">Sharing Folders</a>
+        <a href="#sharing">Sharing Folders Privately</a>
         <a href="#maplet-files">Sharing as .maplet Files</a>
         <a href="#shared-files">Managing Shared Files</a>
         <a href="#folders">Managing Folders</a>
         <a href="#categories">Editing Categories</a>
-        <a href="#journey">Journey Planner</a>
-        <a href="#multi-route">Multi-Route Planner</a>
-        <a href="#importing">Importing Locations</a>
-        <a href="#exporting">Exporting Locations</a>
+        <a href="#journey">Smart Journey Planner</a>
+        <a href="#multi-route">Multi-Stop Route Planning</a>
+        <a href="#importing">Batch Import (CSV, GPX, KML)</a>
+        <a href="#exporting">Export to PDF &amp; CSV</a>
         <a href="#pro">Pro Subscription</a>
-        <a href="#icloud">Cloud Sync</a>
+        <a href="#icloud">iCloud Sync</a>
         <a href="#tips">Tips &amp; Tricks</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
@@ -76,17 +247,17 @@
 
       <article class="prose">
         <h2 id="welcome">Welcome</h2>
-        <p><strong>Maplet</strong> is your companion for saving, organizing, and exploring places that matter to you. Whether you’re a traveler, adventurer, or someone who loves to keep track of favorite spots, Maplet lets you:</p>
+        <p><strong>Maplet</strong> is an iOS app for saving, organizing, and getting back to places you care about. You can:</p>
         <ul>
           <li>Save unlimited locations with notes, photos, and voice memos</li>
           <li>Organize places into folders and categories</li>
-          <li>Instantly see distances to your saved places and mark them as visited</li>
+          <li>See distances to saved places and mark them as visited</li>
           <li>Open or share locations in any major map app (Apple Maps, Google Maps, Waze, HERE, and more)</li>
           <li>Plan journeys, optimize routes, and share folders with friends</li>
           <li>Sync your data privately across Apple devices with iCloud</li>
           <li>Import locations from CSV, GPX, or KML files, and export to PDF or CSV</li>
         </ul>
-        <p>Maplet is designed to be simple, powerful, and privacy-friendly — giving you full control over your location data.</p>
+        <p>Locations stay on your device. Optional iCloud sync uses your Apple ID.</p>
 
         <h2 id="home">Home Screen (Map)</h2>
         <p>The Home screen is your main map view, where you can:</p>
@@ -111,7 +282,7 @@
           <li><strong>Map Style:</strong> Switch between standard and satellite map styles using the map style toggle.</li>
         </ul>
 
-        <h2 id="saving">Saving a Location</h2>
+        <h2 id="saving">How to Save and Bookmark Locations</h2>
         <ol>
           <li>
             <strong>Open the Save Sheet</strong>
@@ -132,7 +303,7 @@
               <li><strong>Voice Note:</strong> Record a quick audio note.</li>
             </ul>
           </li>
-          <li><strong>Save</strong> — Tap <strong>Save Location</strong> at the bottom. Your place is now saved.</li>
+          <li><strong>Save:</strong> Tap <strong>Save Location</strong> at the bottom. Your place is now saved.</li>
         </ol>
         <p><strong>Tip:</strong> You can create new categories and folders directly from the Save sheet.</p>
 
@@ -163,8 +334,8 @@
           <li>When viewing a location’s details, the distance is shown at the top or in the info section.</li>
         </ul>
 
-        <h2 id="sharing">Sharing Folders via Universal Link</h2>
-        <p>The fastest way to share a folder is a Universal Link — a short <code>https://maplet.net/share?data=…</code> URL generated entirely on your device.</p>
+        <h2 id="sharing">Sharing Location Folders Privately via Web Links</h2>
+        <p>The fastest way to share a folder is a Universal Link: a short <code>https://maplet.net/share?data=…</code> URL generated on your device.</p>
         <div class="callout">
           <p><strong>Nothing is uploaded.</strong> Maplet compresses the folder (titles, coordinates, notes, ratings, addresses, and related fields) into the link itself. There is no Maplet server storing the share.</p>
         </div>
@@ -178,21 +349,21 @@
         <ul>
           <li>The link is a real HTTPS URL, so it always opens in a browser first.</li>
           <li>If they have Maplet installed, iOS Universal Links hand the folder off to the app automatically.</li>
-          <li>If they don’t have the app — or they’re on a computer — they get an interactive web map at <a href="index.html#share-showcase">maplet.net/share</a>, with pins, notes, and directions. They can tap <strong>Open in Maplet</strong> if they later install the app.</li>
+          <li>If they don’t have the app, or they’re on a computer, they get an interactive web map at <a href="index.html#share-showcase">maplet.net/share</a>, with pins, notes, and directions. They can tap <strong>Open in Maplet</strong> if they later install the app.</li>
         </ul>
-        <h3>What’s included — and what isn’t</h3>
+        <h3>What’s included and what isn’t</h3>
         <ul>
           <li><strong>Included:</strong> folder name, color, and up to <strong>30 locations</strong> with title, coordinates, category, notes, address, rating, visited status, and contact fields when set.</li>
           <li><strong>Not included:</strong> photos and voice notes. Use a <a href="#maplet-files">.maplet file</a> if you need the full archive.</li>
           <li>Older share links generated before this format may have been capped at 15 locations.</li>
         </ul>
-        <p>Try a live example: <a href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">open a sample shared folder</a>.</p>
+        <p>Try a live example: <a href="share/?data=rdTNbtpAEMDxVxlND704rr_AH8fQJqrUSCig9FD1sLGHeMWy4-6uQRDlXfoufbHKNpSUoihSerOWFczP_10ecVFige8myWgSjdHDhcQCrRPGX0ilugWNBd7yiuCrUEupH2DOrUEPFRbfHlFggVMpdjsBFSmYsGJriT0IPQiCMEvgllcCbm88-OyE2qKH3Q_eSdp0j3L_5d0zY4GHPUpgkYR-lgdR6KFiLMLIT_IoikMPu4kumZdgl7K5cDVdKKkJnCyX5KwP16wq0lBza0BacDXBPVkHSj7UzkcPDRYjDy0W-EXsJKOHrhtkP3y76hZ2WOCn1nBDH_YDrrFwpqUn72-1hLmhtRy46Zu4eRDkcXT0ZnEcxoP3muGeFmwIMrECx729p5WGN5UPE5YaeE2mX1S0cGBrblVF5kjumf24cMWtdkLqc9ZTIikl4JYd60oMzvEbs2bj8FnXdJyl0eC8MkRA2pmtD_OagMtWtfaQkbXaDhnBcmtKOqFNhXY18VnUCwFnjXjQ4v8UHOV58qxglKajQdZdH2gbWPCQaC1pcwxmf7TCkA9zI7V0v35CRRJuWDsJwvU7HDd7bbLXzhqhpa1h5qixL3W8k8PtvGHDHsyNsI7WZKgXj-Lz4ivm6jUtszwJ06N4nI-ibBBPDFsLU9aOYCat445StXbpQ399RU2iAtawIVqSruw_B_UwKFRSazKvOKszoWEqyXXQIAijACbSDe9TwZ1wshSazzTdf9Tt3h6kJ2t_EkfhOD-CR3Eep3uwkqv7PlbV_WEeSpfSbaERmo1YCR8-GrIWSq6oO9akF2xKqk7sM-fDlByZ9xYuhZVKluIs_7uHtsIiTJMkT9NxEDz9Bg">open a Rome walking tour</a>.</p>
 
         <h3>Share a single location, or open in any map app</h3>
         <p>Tap the share button on a saved location card to generate a link or share in various map formats. You can open any location directly in <strong>Apple Maps, Google Maps, Waze, HERE, Citymapper, Gaode, Yandex, 2GIS, or Maps.me</strong>. When sharing, you can include all supported map formats at once so the recipient can open it in their app of choice.</p>
 
         <h2 id="maplet-files">Sharing Folders as .maplet Files</h2>
-        <p>For complete folder sharing with all content, export folders as secure <code>.maplet</code> files. This creates an encrypted archive containing every location, photo, and voice note — with no location-count limit.</p>
+        <p>For complete folder sharing with all content, export folders as <code>.maplet</code> files. This creates an encrypted archive with every location, photo, and voice note, and no location-count limit.</p>
         <h3>How to share as a .maplet file</h3>
         <ol>
           <li>Long-press the folder you want to share</li>
@@ -203,12 +374,12 @@
           <li>Share it normally or save it to Files</li>
         </ol>
         <ul>
-          <li>Complete folder data export — no location-count limit</li>
+          <li>Complete folder data export with no location-count limit</li>
           <li>Photos and voice notes included</li>
           <li>SHA-256 integrity verification</li>
           <li>Can only be opened by the Maplet app</li>
         </ul>
-        <p>Perfect for folder backups, device transfers, or sharing full folder data securely.</p>
+        <p>Use this for backups, moving to a new device, or sending someone the full folder.</p>
 
         <h2 id="shared-files">Managing Shared Files</h2>
         <p>All shared <code>.maplet</code> files are stored in the app for easy access.</p>
@@ -236,7 +407,7 @@
         <h2 id="categories">Editing Categories in Settings</h2>
         <p>Go to the <strong>Settings</strong> tab and select <strong>Manage Categories</strong>. You can view custom categories, tap <strong>Edit</strong> to change name, icon, or color, or tap <strong>Delete</strong> to remove a category that isn’t in use. Built-in categories cannot be edited or deleted.</p>
 
-        <h2 id="journey">Journey Planner &amp; Checklists (Pro)</h2>
+        <h2 id="journey">Smart Journey Planner &amp; Checklist Navigation (Pro)</h2>
         <p>Maplet’s <strong>Journey Planner</strong> lets you organize trips, create checklists of places to visit, and track your progress.</p>
         <h3>Accessing the Journey Planner</h3>
         <p>Tap the <strong>Journey Planner</strong> tab (or find it in the main menu) to see a list of all your journey plans.</p>
@@ -267,7 +438,7 @@
         <h3>Completing or Deleting a Journey</h3>
         <p>Mark a journey as complete from the <strong>…</strong> menu, or delete it if you no longer need it (this cannot be undone).</p>
 
-        <h2 id="multi-route">Multi-Route Planner (Pro)</h2>
+        <h2 id="multi-route">Multi-Stop Route Planning &amp; Optimization (Pro)</h2>
         <p>The <strong>Multi-Route Planner</strong> lets you plan and preview routes with multiple stops, optimize the order, and open or share the route in your favorite navigation apps.</p>
         <h3>Selecting Stops</h3>
         <ol>
@@ -282,10 +453,10 @@
           <li>The map view shows your stops and the calculated route.</li>
           <li>In <strong>Route Options</strong> you can choose Driving or Walking, enable <strong>Optimize Route &amp; Stops</strong>, reorder stops, and enable/disable individual stops.</li>
         </ol>
-        <p>See total distance and estimated time, then <strong>Open In</strong> Apple Maps, Google Maps, or Here WeGo — or <strong>Share</strong> a link for the route. Apple Maps is recommended for multi-stop routes.</p>
+        <p>See total distance and estimated time, then <strong>Open In</strong> Apple Maps, Google Maps, or Here WeGo, or <strong>Share</strong> a link for the route. Apple Maps is recommended for multi-stop routes.</p>
 
-        <h2 id="importing">Importing Locations (Batch Import)</h2>
-        <p>Import multiple locations at once from CSV, GPX, or KML files — useful for migrating data from other apps or quickly adding many places.</p>
+        <h2 id="importing">Batch Importing Locations (CSV, GPX, and KML)</h2>
+        <p>Import multiple locations at once from CSV, GPX, or KML files. Useful when migrating from another app or adding many places at once.</p>
         <ol>
           <li>Open <strong>Batch Import</strong> from the Pro tab or main menu.</li>
           <li>Choose the file format: <strong>CSV</strong> (spreadsheets), <strong>GPX</strong> (GPS tracks/waypoints), or <strong>KML</strong> (Google Earth).</li>
@@ -302,7 +473,7 @@
         </ul>
         <p>For best results, use UTF-8 encoding and valid coordinates. Use the preview to double-check data before importing.</p>
 
-        <h2 id="exporting">Exporting Locations (Pro)</h2>
+        <h2 id="exporting">Exporting Saved Places to PDF &amp; CSV (Pro)</h2>
         <ol>
           <li>Go to the <strong>Pro</strong> tab and select <strong>Export to PDF / CSV</strong>.</li>
           <li>Select the locations you want to export. Use search, sort, and filters as needed.</li>
@@ -318,7 +489,7 @@
         </ul>
         <p>The one-year Pro subscription includes a 7-day free trial. Cancel before the trial ends to avoid being charged. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime via your Apple ID settings. By subscribing, you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</p>
 
-        <h2 id="icloud">Cloud Sync (iCloud)</h2>
+        <h2 id="icloud">iCloud Sync Setup &amp; Troubleshooting</h2>
         <ul>
           <li>Maplet uses <strong>iCloud</strong> to automatically sync locations, folders, and categories across your Apple devices.</li>
           <li>No account setup: just be signed into iCloud with iCloud Drive enabled.</li>
@@ -346,7 +517,10 @@
           <dd>Go to the Pro/Upgrade screen and tap “Restore Purchases.” Make sure you’re signed in with the same Apple ID you used to subscribe.</dd>
 
           <dt>Is my data private?</dt>
-          <dd>Yes. All your personal data is stored locally and synced via your private iCloud account. Folder share links are encoded on-device in the URL — nothing is uploaded to a Maplet server. Anonymous analytics and crash data may be sent to Firebase; see the <a href="privacy.html">Privacy Policy</a>.</dd>
+          <dd>Yes. All your personal data is stored locally and synced via your private iCloud account. Folder share links are encoded on-device in the URL. Nothing is uploaded to a Maplet server. Anonymous analytics and crash data may be sent to Firebase; see the <a href="privacy.html">Privacy Policy</a>.</dd>
+
+          <dt>How does Maplet keep shared folder data private?</dt>
+          <dd>Folder share links are compressed and encoded directly inside the URL on your device. The shared data is never stored on external servers.</dd>
 
           <dt>How do I transfer my data to a new device?</dt>
           <dd>Sign in to iCloud on your new device and install Maplet. Your data will sync automatically.</dd>
@@ -355,7 +529,7 @@
           <dd>Deletions are permanent. There’s no undo, so please double-check before deleting. If you delete a folder and it still appears, restart the app.</dd>
 
           <dt>Can I use Maplet offline?</dt>
-          <dd>Yes. You can view, organize, and manage saved locations offline. Some features (map previews or iCloud sync) require internet.</dd>
+          <dd>Yes. You can view, organize, and manage saved locations offline without an active internet connection. Some features (map previews or iCloud sync) require internet.</dd>
 
           <dt>What map apps are supported for sharing/opening locations?</dt>
           <dd>Apple Maps, Google Maps, Waze, HERE, Citymapper, Gaode, Yandex, 2GIS, and Maps.me.</dd>
@@ -364,16 +538,16 @@
           <dd>Open your device’s Settings, tap your Apple ID, go to Subscriptions, and select Maplet.</dd>
 
           <dt>Can I share folders with others?</dt>
-          <dd>Yes, two ways: (1) a Universal Link at <code>https://maplet.net/share?data=…</code> — up to 30 locations, encoded on-device, opens as a web map (or in the app if installed); photos and voice notes are not included. (2) a <code>.maplet</code> file with complete data including photos and voice notes, and no location limit.</dd>
+          <dd>Yes, two ways: (1) a Universal Link at <code>https://maplet.net/share?data=…</code> (up to 30 locations, encoded on-device, opens as a web map or in the app if installed; photos and voice notes are not included). (2) a <code>.maplet</code> file with complete data including photos and voice notes, and no location limit.</dd>
 
-          <dt>Does the other person need Maplet installed to open a share link?</dt>
-          <dd>No. The link always works in a browser. If they have Maplet, iOS can open it directly in the app via Universal Links.</dd>
+          <dt>Does someone need Maplet installed to open a shared folder link?</dt>
+          <dd>No. Share links open in any standard web browser as an interactive map preview. If the recipient has Maplet installed, iOS can open the folder directly in the app via Universal Links.</dd>
 
           <dt>What file formats does Maplet support for importing?</dt>
-          <dd>CSV, GPX, and KML. CSV is best for spreadsheets, GPX for GPS tracks, and KML for Google Earth files.</dd>
+          <dd>Maplet supports importing CSV (spreadsheets), GPX (GPS tracks and waypoints), and KML (Google Earth) files.</dd>
 
-          <dt>What export formats are available?</dt>
-          <dd>Pro users can export to PDF (for printing/sharing with photos) or CSV (for data backup and use in other apps). Both can include map links and customizable fields.</dd>
+          <dt>What export formats are available in Maplet?</dt>
+          <dd>Locations can be exported to PDF documents (ideal for printing with notes and photos) or CSV files for backups and data transfers. Both can include map links and customizable fields.</dd>
 
           <dt>What’s the difference between temporary and green flags?</dt>
           <dd>Temporary flags are cleared when the app restarts or when you press the clear flag button. Green flags are persistent, remain after restart, and can later be saved as a location.</dd>
@@ -418,7 +592,7 @@
           </span>
           <span class="brand-name">Maplet</span>
         </a>
-        <p>Save, organize, and share your favorite places — privately.</p>
+        <p>Map marker, route planner, and private location bookmarks.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -437,7 +611,7 @@
     </div>
     <div class="wrap footer-bottom">
       <p>© <span id="year"></span> Maplet. All rights reserved.</p>
-      <p class="footer-credit">Crafted by <img src="images/GemshiLogoDark.png" alt="" width="16" height="16" /> Gemshi</p>
+      <p class="footer-credit">Made by <img src="images/GemshiLogoDark.png" alt="" width="16" height="16" /> Gemshi</p>
     </div>
   </footer>
   <script src="script.js"></script>

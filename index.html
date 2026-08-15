@@ -3,18 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Maplet — Map Location Bookmarks &amp; Route Planner</title>
-  <meta name="description" content="Maplet is an offline-first map marker and route planner for iOS. Save waypoints, plan multi-stop routes, navigate with Compass Target, and share folders privately — no account required." />
+  <title>Maplet: Offline Map Marker &amp; Route Planner for iOS</title>
+  <meta name="description" content="Offline map marker, waypoint saver, and multi-stop route planner for iPhone. Import GPX and KML, export CSV, and navigate with a GPS bearing tracker. No account required." />
   <meta name="theme-color" content="#F5F5F7" />
 
+  <link rel="canonical" href="https://maplet.net/" />
   <link rel="icon" href="favicon.ico" sizes="any" />
 
   <!-- Social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Maplet — Map Location Bookmarks &amp; Route Planner" />
-  <meta property="og:description" content="Save waypoints, plan optimized multi-stop routes, and navigate off-grid. Private, offline-first, no account required." />
-  <meta property="og:image" content="images/MapletScr1.webp" />
+  <meta property="og:url" content="https://maplet.net/" />
+  <meta property="og:title" content="Maplet: Offline Map Marker &amp; Route Planner for iOS" />
+  <meta property="og:description" content="Offline map marker, waypoint saver, and multi-stop route planner. Private, works offline, no account required." />
+  <meta property="og:image" content="https://maplet.net/images/MapletScr1.webp" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Maplet",
+    "url": "https://maplet.net",
+    "description": "Offline map marker, waypoint saver, and multi-stop route planner."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best offline route planner for iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maplet is an offline route planner for iOS. Save waypoints on your device, build multi-stop routes, and navigate without cell service using Compass Target, a GPS bearing tracker for waypoint navigation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I share a custom map on iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Maplet, long-press a folder and choose Share via Deep Link. Maplet encodes your pins into a maplet.net/share URL on your device. Anyone with the link can open an interactive map in a browser, or in Maplet if the app is installed. Nothing is uploaded to a server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import GPX and KML files into Maplet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Maplet can import GPX and KML files, as well as CSV lists of coordinates. You can also export CSV coordinate data, PDF reports, or a full .maplet archive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Maplet work without internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Saved places, notes, coordinates, and Compass Target waypoint navigation work without a data connection. Optional iCloud sync is the only feature that needs the network."
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://apps.apple.com" />
   <link rel="stylesheet" href="styles.css" />
@@ -45,6 +97,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="#features">Features</a>
         <a href="#share-showcase">Sharing</a>
+        <a href="#faq">FAQ</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -69,12 +122,13 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="wrap hero-inner">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Map marker &amp; route planner for iOS</p>
-          <h1>Save places.<br>Plan the route.<br>Stay off-grid.</h1>
+          <p class="eyebrow">Maplet for iOS</p>
+          <h1>Offline Map Marker &amp; Route Planner for iOS</h1>
+          <h2 class="hero-punch">Save places, plan the route, use it without a signal.</h2>
           <p class="hero-sub">
-            Maplet is a map bookmark and GPS toolkit for travelers, field work, and outdoor exploring.
+            Maplet is a map bookmark and GPS toolkit for travel, field work, and outdoor trips.
             Pin waypoints with notes and photos, optimize multi-stop routes, and keep every location
-            on your device — no account required.
+            on your device. No account required.
           </p>
 
           <div class="hero-ctas">
@@ -86,13 +140,6 @@
                 <small>Download on the</small>
                 App Store
               </span>
-            </a>
-
-            <a class="btn btn-ghost" href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 3H21v7.5M21 3 10 14M10 5H5.5A2.5 2.5 0 0 0 3 7.5V18a2.5 2.5 0 0 0 2.5 2.5H16a2.5 2.5 0 0 0 2.5-2.5v-4.5"/>
-              </svg>
-              View a Sample Shared Folder
             </a>
           </div>
 
@@ -114,7 +161,7 @@
       <div class="wrap">
         <div class="section-heading" data-reveal>
           <p class="eyebrow">Why Maplet</p>
-          <h2>A pin log, a route planner, and a GPS toolkit — in one app.</h2>
+          <h2>Pins, routes, and GPS tools in one iPhone app.</h2>
         </div>
 
         <div class="feature-grid">
@@ -126,7 +173,7 @@
               </svg>
             </div>
             <h3>Save &amp; bookmark</h3>
-            <p>Pin any waypoint with a title, notes, photos, and voice memos. Organize into folders, tags, and color-coded categories — with address, distance, and coordinates filled in for you.</p>
+            <p>Pin any waypoint with a title, notes, photos, and voice memos. Organize into folders, tags, and color-coded categories. Import GPX and KML files, and export CSV coordinate data when you need a backup or spreadsheet.</p>
           </article>
 
           <article class="feature-card" data-reveal>
@@ -152,7 +199,7 @@
               </svg>
             </div>
             <h3>Compass &amp; GPS tools</h3>
-            <p>Live compass overlay on the map. Compass Target tracks saved places, the Sun, Moon, Qibla, and your parked car — plus arrival alerts when you get near a pin.</p>
+            <p>A GPS bearing tracker for offline waypoint navigation. Compass Target tracks saved places, the Sun, Moon, Qibla, and your parked car, plus arrival alerts when you get near a pin.</p>
           </article>
 
           <article class="feature-card" data-reveal>
@@ -162,7 +209,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.25 12.25l2 2 3.5-4"/>
               </svg>
             </div>
-            <h3>Private &amp; offline-first</h3>
+            <h3>Private and offline</h3>
             <p>Works fully offline. Optional iCloud sync stays on your Apple ID. No ads, no account, and your saved places never live on a Maplet server.</p>
           </article>
         </div>
@@ -170,7 +217,7 @@
     </section>
 
     <!-- =================================================================
-         Alternating showcase rows — real product moments
+         Showcase rows
          ================================================================= -->
     <section class="showcase">
       <div class="wrap">
@@ -197,14 +244,14 @@
         <div class="showcase-row reverse" data-reveal>
           <div class="showcase-copy">
             <p class="eyebrow">Compass Target</p>
-            <h2>Navigate by bearing when maps go dark.</h2>
+            <h2>Navigate by bearing when you lose signal.</h2>
             <p>
-              Compass Target is a live radar for the places you saved — plus the Sun, Moon, Qibla,
-              and your parked car. A compass overlay sits on the map, and arrival alerts fire when
-              you enter a 500&nbsp;m radius of a pin. No cell service required.
+              Compass Target is a GPS bearing tracker for the places you saved, plus the Sun, Moon,
+              Qibla, and your parked car. A compass overlay sits on the map, and arrival alerts fire
+              when you enter a 500&nbsp;m radius of a pin. No cell service required.
             </p>
             <ul class="checklist">
-              <li>Track saved places, Sun, Moon, Qibla, and parked car together</li>
+              <li>Offline waypoint navigation by distance and bearing</li>
               <li>Live compass overlay on the map</li>
               <li>Arrival alerts even when the app is in the background</li>
             </ul>
@@ -225,18 +272,18 @@
           <p class="eyebrow">maplet.net/share</p>
           <h2>Share a folder without asking anyone to install the app.</h2>
           <p>
-            Long-press a folder, choose Share via Deep Link, and Maplet encodes the pins — titles,
-            coordinates, notes, ratings — into one short <strong>maplet.net/share</strong> URL. Entirely
-            on-device. Recipients get an interactive map in the browser, or Maplet opens if it’s installed.
+            Long-press a folder, choose Share via Deep Link, and Maplet encodes titles, coordinates,
+            notes, and ratings into one short <strong>maplet.net/share</strong> URL on your device.
+            Recipients get an interactive map in the browser, or Maplet opens if it’s installed.
           </p>
 
           <ul class="checklist">
-            <li>Private deep links — nothing is uploaded to a server</li>
+            <li>Private deep links. Nothing is uploaded to a server</li>
             <li>Import GPX, KML, and CSV; export PDF, CSV, or a full .maplet file</li>
             <li>Open any pin in Apple Maps, Google Maps, Waze, and 8+ other apps</li>
           </ul>
 
-          <a class="btn btn-primary" href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">
+          <a class="btn btn-primary" href="share/?data=rdTNbtpAEMDxVxlND704rr_AH8fQJqrUSCig9FD1sLGHeMWy4-6uQRDlXfoufbHKNpSUoihSerOWFczP_10ecVFige8myWgSjdHDhcQCrRPGX0ilugWNBd7yiuCrUEupH2DOrUEPFRbfHlFggVMpdjsBFSmYsGJriT0IPQiCMEvgllcCbm88-OyE2qKH3Q_eSdp0j3L_5d0zY4GHPUpgkYR-lgdR6KFiLMLIT_IoikMPu4kumZdgl7K5cDVdKKkJnCyX5KwP16wq0lBza0BacDXBPVkHSj7UzkcPDRYjDy0W-EXsJKOHrhtkP3y76hZ2WOCn1nBDH_YDrrFwpqUn72-1hLmhtRy46Zu4eRDkcXT0ZnEcxoP3muGeFmwIMrECx729p5WGN5UPE5YaeE2mX1S0cGBrblVF5kjumf24cMWtdkLqc9ZTIikl4JYd60oMzvEbs2bj8FnXdJyl0eC8MkRA2pmtD_OagMtWtfaQkbXaDhnBcmtKOqFNhXY18VnUCwFnjXjQ4v8UHOV58qxglKajQdZdH2gbWPCQaC1pcwxmf7TCkA9zI7V0v35CRRJuWDsJwvU7HDd7bbLXzhqhpa1h5qixL3W8k8PtvGHDHsyNsI7WZKgXj-Lz4ivm6jUtszwJ06N4nI-ibBBPDFsLU9aOYCat445StXbpQ399RU2iAtawIVqSruw_B_UwKFRSazKvOKszoWEqyXXQIAijACbSDe9TwZ1wshSazzTdf9Tt3h6kJ2t_EkfhOD-CR3Eep3uwkqv7PlbV_WEeSpfSbaERmo1YCR8-GrIWSq6oO9akF2xKqk7sM-fDlByZ9xYuhZVKluIs_7uHtsIiTJMkT9NxEDz9Bg">
             Try the live demo
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
           </a>
@@ -251,11 +298,36 @@
     </section>
 
     <!-- =================================================================
+         FAQ
+         ================================================================= -->
+    <section class="home-faq" id="faq">
+      <div class="wrap">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions</h2>
+        </div>
+        <dl class="faq home-faq-list" data-reveal>
+          <dt>What is the best offline route planner for iPhone?</dt>
+          <dd>Maplet is an offline route planner for iOS. Save waypoints on your device, optimize multi-stop routes, and keep navigating when there’s no signal.</dd>
+
+          <dt>How do I share a custom map on iPhone?</dt>
+          <dd>Long-press a folder in Maplet and choose Share via Deep Link. The app encodes your pins into a <strong>maplet.net/share</strong> URL on your device. Anyone with the link gets an interactive map. No account, and nothing is uploaded to a server.</dd>
+
+          <dt>Can I import GPX and KML files?</dt>
+          <dd>Yes. Maplet imports GPX and KML files, plus CSV coordinate lists. You can export CSV coordinate data, PDF reports, or a full <code>.maplet</code> archive.</dd>
+
+          <dt>Does Maplet work without internet?</dt>
+          <dd>Yes. Saved places, notes, coordinates, and Compass Target (the GPS bearing tracker) all work offline. iCloud sync is optional and the only feature that needs a connection.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- =================================================================
          Closing CTA
          ================================================================= -->
     <section class="cta-band">
       <div class="wrap cta-inner" data-reveal>
-        <h2>Pin it. Route it. Take it with you.</h2>
+        <h2>Download Maplet for iPhone</h2>
         <p>Free to download. Your places stay on your device.</p>
         <a class="btn btn-light" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -303,7 +375,7 @@
           <h4>Product</h4>
           <a href="#features">Features</a>
           <a href="#share-showcase">Sharing</a>
-          <a href="share/?data=bY_BTsMwEER_ZWWORCFpk9rNrRHNBbhQyqVw2CaOYurGle0Eiar_zrpSRA9YsrT7pNmZObO2ZgW7q6pFOc9ZxFpFq_No41ZpHUBP4HHYo4I3q05ENCt2Z4aEU9h0Uh06eDEdHo-ygb3q4RVdpxoo9dhEcFVGsF2tSRms3pX8DqOazobF0LLtlacLK4t7WB-VRS9dcCOjWR6nS54uF8vpESdNnsczns15PmEesRC3lM7DSEaAHtzQO-ljKI05gFf1QXoHFBObEftaxuRh6VTE3E0iT_M9WUIGQojwRaAhdDnYL3jqUKsWA_shtnIKPx4m8cgKbwd5ic7XxpUxzV-RWZKJTPxXJOEivSlyNXs2NWqoUGMrNWxOxrPLJ0VtWJHyhci4yJLk8gs">See a sample shared folder</a>
+          <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
@@ -317,7 +389,7 @@
     <div class="wrap footer-bottom">
       <p>© <span id="year"></span> Maplet. All rights reserved.</p>
       <p class="footer-credit">
-        Crafted by
+        Made by
         <img src="images/GemshiLogoDark.png" alt="Gemshi" width="16" height="16" />
         Gemshi
       </p>
