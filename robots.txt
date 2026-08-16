@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Share links are private payloads in the URL; no need to crawl them.
+Disallow: /share/
+
+Sitemap: https://maplet.net/sitemap.xml
