@@ -14,6 +14,11 @@
   const SHEET_PEEK_PX = 132; // keep in sync with --sheet-peek in styles.css
   const MOBILE_QUERY = '(max-width: 768px)';
 
+  function track(eventName, params) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', eventName, params || {});
+  }
+
   const DIRECTIONS_ICON = 'M12 2 4.5 20.29l.71.71L12 18l6.79 3 .71-.71z';
   const PHONE_ICON =
     'M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.25 1.01Z';
@@ -334,6 +339,11 @@
     dirLink.classList.add('directions-link');
     dirLink.dataset.lat = String(loc.latitude);
     dirLink.dataset.lon = String(loc.longitude);
+    dirLink.addEventListener('click', () => {
+      track('external_map_export', {
+        provider: getMapsPref() === 'apple' ? 'apple_maps' : 'google_maps',
+      });
+    });
     actions.appendChild(dirLink);
     if (loc.telephoneNumber) {
       actions.appendChild(createIconLink(`tel:${loc.telephoneNumber}`, 'Contact', PHONE_ICON));
@@ -435,11 +445,15 @@
         hoveredIndex = -1;
         refreshHighlight();
       });
-      card.addEventListener('click', () => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a, button, .card-actions')) return;
         pinnedIndex = i;
         hoveredIndex = i;
         refreshHighlight();
         panTo(i);
+        track('share_pin_click', {
+          pin_name: (model.locations[i] && model.locations[i].title) || 'waypoint',
+        });
       });
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -447,6 +461,9 @@
           pinnedIndex = i;
           refreshHighlight();
           panTo(i);
+          track('share_pin_click', {
+            pin_name: (model.locations[i] && model.locations[i].title) || 'waypoint',
+          });
         }
       });
     });
@@ -466,6 +483,9 @@
         refreshHighlight();
         expandSheetIfMobile();
         cardEls[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        track('share_pin_click', {
+          pin_name: (model.locations[i] && model.locations[i].title) || 'waypoint',
+        });
       });
     });
   }
@@ -651,13 +671,24 @@
     window.addEventListener('resize', () => map.resize());
 
     els.openInAppBtn.addEventListener('click', () => {
+      track('open_in_maplet_click', { payload_present: Boolean(rawParam) });
       // Per spec §8: manual fallback re-attempt at the legacy custom scheme,
       // reusing the same (new-format, compressed) payload as-is.
       window.location.href = `maplet://import?data=${rawParam}`;
     });
   }
 
+  function setupAppStoreTracking() {
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href*="apps.apple.com"]');
+      if (!link) return;
+      const placement = link.closest('#errorState') ? 'share_error' : 'share_header';
+      track('app_store_click', { placement });
+    });
+  }
+
   function init() {
+    setupAppStoreTracking();
     showLoading();
 
     let decoded;
@@ -665,6 +696,7 @@
       decoded = getShareData();
     } catch (err) {
       console.error('[Maplet] Failed to decode share link:', err);
+      track('share_map_view', { has_data: false, pin_count: 0 });
       showError();
       return;
     }
@@ -674,10 +706,15 @@
       model = expandPayload(decoded.payload);
     } catch (err) {
       console.error('[Maplet] Failed to expand payload:', err);
+      track('share_map_view', { has_data: false, pin_count: 0 });
       showError();
       return;
     }
 
+    track('share_map_view', {
+      has_data: true,
+      pin_count: model.locations.length,
+    });
     render(model, decoded.rawParam);
   }
 

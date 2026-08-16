@@ -7,6 +7,15 @@
   <meta name="description" content="Pin your favorite places and navigate using any app. Maplet offers compass tracking, multi-stop route planning, and private offline folder sharing." />
   <meta name="theme-color" content="#F5F5F7" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S4Z6WJTWKN');
+  </script>
+
   <link rel="canonical" href="https://maplet.net/" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="144x144" href="icon-144.png" />
@@ -73,7 +82,7 @@
   <link rel="preconnect" href="https://apps.apple.com" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-analytics="index">
 
   <!-- ===================================================================
        Header
@@ -105,7 +114,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="header">
           Download App
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
@@ -126,7 +135,7 @@
         <div class="hero-copy" data-reveal>
           <p class="eyebrow">Maplet for iOS</p>
           <h1>Offline Map Marker &amp; Route Planner for iOS</h1>
-          <h2 class="hero-punch">Save places, plan the route, use it without a signal.</h2>
+          <h2 class="hero-punch">Save places, plan the routes, and use it without a signal.</h2>
           <p class="hero-sub">
             Maplet is a map bookmark and GPS toolkit for travel, field work, and outdoor trips.
             Pin waypoints with notes and photos, optimize multi-stop routes, and keep every location
@@ -134,7 +143,7 @@
           </p>
 
           <div class="hero-ctas">
-            <a class="btn btn-appstore" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+            <a class="btn btn-appstore" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="hero">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                 <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
               </svg>
@@ -157,64 +166,75 @@
     </section>
 
     <!-- =================================================================
-         Feature grid
+         Features
          ================================================================= -->
     <section class="features" id="features">
-      <div class="wrap">
-        <div class="section-heading" data-reveal>
+      <div class="wrap features-inner">
+        <div class="features-intro" data-reveal>
           <p class="eyebrow">Why Maplet</p>
-          <h2>Pins, routes, and GPS tools in one iPhone app.</h2>
+          <h2>The complete toolkit for bookmarking, routing, and exploration.</h2>
+          <p class="features-lede">
+            Save detailed waypoints with media and notes, auto-optimize multi-stop routes, and navigate off-grid with Compass Target. Share entire interactive maps via private links, with zero account setup and all your data kept on your device.
+          </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon" style="--icon-tint:#FF6B35">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <ol class="capability-list" data-reveal>
+          <li class="capability-item" style="--tint:#FF6B35">
+            <span class="capability-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11.2A7 7 0 0 0 5 9.8C5 14.8 12 21 12 21Z"/>
                 <circle cx="12" cy="9.8" r="2.2"/>
               </svg>
+            </span>
+            <div class="capability-copy">
+              <h3>Save &amp; bookmark</h3>
+              <p>Pin waypoints with notes, photos, and voice memos. Organize with folders and categories. Import GPX or KML, export CSV when you need a backup.</p>
             </div>
-            <h3>Save &amp; bookmark</h3>
-            <p>Pin any waypoint with a title, notes, photos, and voice memos. Organize into folders, tags, and color-coded categories. Import GPX and KML files, and export CSV coordinate data when you need a backup or spreadsheet.</p>
-          </article>
+          </li>
 
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon" style="--icon-tint:#0A84FF">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <li class="capability-item" style="--tint:#0A84FF">
+            <span class="capability-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 19c2.5-6 5-9 8-9s5.5 3 8 9"/>
                 <circle cx="4" cy="19" r="1.4" fill="currentColor" stroke="none"/>
                 <circle cx="12" cy="10" r="1.4" fill="currentColor" stroke="none"/>
                 <circle cx="20" cy="19" r="1.4" fill="currentColor" stroke="none"/>
               </svg>
+            </span>
+            <div class="capability-copy">
+              <h3>Multi-stop routes</h3>
+              <p>Build routes for road trips, deliveries, or trails. Reorder stops, track progress, and open the result in Apple Maps, Google Maps, Waze, and more.</p>
             </div>
-            <h3>Plan multi-stop routes</h3>
-            <p>Build optimized routes for road trips, deliveries, or trails. Reorder stops, track journey progress, and open the result in Apple Maps, Google Maps, Waze, and more.</p>
-          </article>
+          </li>
 
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon" style="--icon-tint:#30B04E">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <li class="capability-item" style="--tint:#30B04E">
+            <span class="capability-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
                 <circle cx="12" cy="12" r="9"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="m12 12 4-6"/>
                 <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/>
               </svg>
+            </span>
+            <div class="capability-copy">
+              <h3>Compass &amp; GPS</h3>
+              <p>Compass Target tracks saved places, the Sun, Moon, Qibla, and your parked car. Arrival alerts fire when you get near a pin.</p>
             </div>
-            <h3>Compass &amp; GPS tools</h3>
-            <p>A GPS bearing tracker for offline waypoint navigation. Compass Target tracks saved places, the Sun, Moon, Qibla, and your parked car, plus arrival alerts when you get near a pin.</p>
-          </article>
+          </li>
 
-          <article class="feature-card" data-reveal>
-            <div class="feature-icon" style="--icon-tint:#8E5CF7">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <li class="capability-item" style="--tint:#636366">
+            <span class="capability-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.75l7.25 3.2v5.42c0 4.53-3.06 7.9-7.25 9.88-4.19-1.98-7.25-5.35-7.25-9.88V5.95L12 2.75Z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.25 12.25l2 2 3.5-4"/>
               </svg>
+            </span>
+            <div class="capability-copy">
+              <h3>Private &amp; offline</h3>
+              <p>Works fully offline. Optional iCloud sync stays on your Apple ID. No ads, no account, and nothing lives on a Maplet server.</p>
             </div>
-            <h3>Private and offline</h3>
-            <p>Works fully offline. Optional iCloud sync stays on your Apple ID. No ads, no account, and your saved places never live on a Maplet server.</p>
-          </article>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -331,7 +351,7 @@
       <div class="wrap cta-inner" data-reveal>
         <h2>Download Maplet for iPhone</h2>
         <p>Free to download. Your places stay on your device.</p>
-        <a class="btn btn-light" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+        <a class="btn btn-light" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="cta_band">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
           </svg>
@@ -364,7 +384,7 @@
           <span class="brand-name">Maplet</span>
         </a>
         <p>Map marker, route planner, and private location bookmarks.</p>
-        <a class="btn btn-appstore btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+        <a class="btn btn-appstore btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="footer">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
           </svg>
@@ -398,6 +418,7 @@
     </div>
   </footer>
 
+  <script src="analytics.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

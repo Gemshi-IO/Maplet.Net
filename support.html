@@ -7,6 +7,15 @@
   <meta name="description" content="Complete user guide for Maplet. Learn how to save waypoints, import GPX/KML/CSV files, plan multi-stop routes, and share private map folders on iOS." />
   <meta name="theme-color" content="#F5F5F7" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S4Z6WJTWKN');
+  </script>
+
   <link rel="canonical" href="https://maplet.net/support.html" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="144x144" href="icon-144.png" />
@@ -182,7 +191,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-analytics="support">
   <header class="site-header" id="siteHeader">
     <div class="wrap header-inner">
       <a href="index.html" class="brand">
@@ -207,7 +216,7 @@
         <a href="privacy.html">Privacy</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">Download App</a>
+        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="header">Download App</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
           <span></span><span></span><span></span>
         </button>
@@ -616,6 +625,7 @@
       <p class="footer-credit">Made by <img src="images/GemshiLogoDark.png" alt="" width="16" height="16" /> Gemshi</p>
     </div>
   </footer>
+  <script src="analytics.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
