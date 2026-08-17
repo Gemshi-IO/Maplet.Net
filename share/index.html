@@ -7,12 +7,17 @@
   <meta name="description" content="View a shared collection of saved places on Maplet." />
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN"></script>
-  <script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN" data-cfasync="false"></script>
+  <script data-cfasync="false">
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', 'G-S4Z6WJTWKN');
+    gtag('config', 'G-S4Z6WJTWKN', {
+      send_page_view: true,
+      debug_mode: /[?&]ga_debug=1(?:&|$)/.test(location.search)
+    });
   </script>
 
   <!-- Favicon -->

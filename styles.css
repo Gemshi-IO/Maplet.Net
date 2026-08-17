@@ -392,7 +392,7 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; }
 
 .capability-item {
   display: grid;
-  grid-template-columns: 52px 1fr;
+  grid-template-columns: 56px 1fr;
   gap: 18px;
   align-items: start;
   padding: 26px 0;
@@ -401,8 +401,7 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; }
   transform: translateY(14px);
   transition:
     opacity 0.55s ease,
-    transform 0.55s ease,
-    background-color 0.25s ease;
+    transform 0.55s ease;
 }
 
 .capability-list.is-visible .capability-item {
@@ -416,25 +415,24 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; }
 .capability-list.is-visible .capability-item:nth-child(4) { transition-delay: 0.32s; }
 
 .capability-mark {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--tint);
-  background: color-mix(in srgb, var(--tint) 12%, transparent);
-  transition: transform 0.35s ease, background-color 0.25s ease;
+  transition: transform 0.35s ease;
 }
 
-.capability-mark svg {
-  width: 24px;
-  height: 24px;
+.capability-mark img {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
 }
 
 .capability-item:hover .capability-mark {
-  transform: scale(1.06);
-  background: color-mix(in srgb, var(--tint) 18%, transparent);
+  transform: scale(1.05);
 }
 
 .capability-copy h3 {
@@ -771,15 +769,16 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; }
   .features { padding: 40px 0 72px; }
   .features-intro h2 { max-width: none; }
   .capability-item {
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 48px 1fr;
     gap: 14px;
     padding: 22px 0;
   }
-  .capability-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
+  .capability-mark,
+  .capability-mark img {
+    width: 48px;
+    height: 48px;
   }
+  .capability-mark img { border-radius: 12px; }
   .capability-copy h3 { font-size: 18px; }
 
   .hero { padding: 48px 0 64px; }

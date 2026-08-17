@@ -8,12 +8,17 @@
   <meta name="theme-color" content="#F5F5F7" />
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN"></script>
-  <script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN" data-cfasync="false"></script>
+  <script data-cfasync="false">
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', 'G-S4Z6WJTWKN');
+    gtag('config', 'G-S4Z6WJTWKN', {
+      send_page_view: true,
+      debug_mode: /[?&]ga_debug=1(?:&|$)/.test(location.search)
+    });
   </script>
 
   <link rel="canonical" href="https://maplet.net/" />
@@ -179,12 +184,9 @@
         </div>
 
         <ol class="capability-list" data-reveal>
-          <li class="capability-item" style="--tint:#FF6B35">
+          <li class="capability-item">
             <span class="capability-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11.2A7 7 0 0 0 5 9.8C5 14.8 12 21 12 21Z"/>
-                <circle cx="12" cy="9.8" r="2.2"/>
-              </svg>
+              <img src="images/mapletSaveLocations.svg" alt="" width="32" height="32" loading="lazy" />
             </span>
             <div class="capability-copy">
               <h3>Save &amp; bookmark</h3>
@@ -192,14 +194,9 @@
             </div>
           </li>
 
-          <li class="capability-item" style="--tint:#0A84FF">
+          <li class="capability-item">
             <span class="capability-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19c2.5-6 5-9 8-9s5.5 3 8 9"/>
-                <circle cx="4" cy="19" r="1.4" fill="currentColor" stroke="none"/>
-                <circle cx="12" cy="10" r="1.4" fill="currentColor" stroke="none"/>
-                <circle cx="20" cy="19" r="1.4" fill="currentColor" stroke="none"/>
-              </svg>
+              <img src="images/multiStopRoutes.svg" alt="" width="32" height="32" loading="lazy" />
             </span>
             <div class="capability-copy">
               <h3>Multi-stop routes</h3>
@@ -207,14 +204,9 @@
             </div>
           </li>
 
-          <li class="capability-item" style="--tint:#30B04E">
+          <li class="capability-item">
             <span class="capability-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <circle cx="12" cy="12" r="9"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="m12 12 4-6"/>
-                <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/>
-              </svg>
+              <img src="images/locationOnCompass.svg" alt="" width="32" height="32" loading="lazy" />
             </span>
             <div class="capability-copy">
               <h3>Compass &amp; GPS</h3>
@@ -222,12 +214,9 @@
             </div>
           </li>
 
-          <li class="capability-item" style="--tint:#636366">
+          <li class="capability-item">
             <span class="capability-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.75l7.25 3.2v5.42c0 4.53-3.06 7.9-7.25 9.88-4.19-1.98-7.25-5.35-7.25-9.88V5.95L12 2.75Z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9.25 12.25l2 2 3.5-4"/>
-              </svg>
+              <img src="images/privateOffline.svg" alt="" width="32" height="32" loading="lazy" />
             </span>
             <div class="capability-copy">
               <h3>Private &amp; offline</h3>
