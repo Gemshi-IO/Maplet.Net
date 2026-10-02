@@ -112,11 +112,45 @@
           </div>
         </header>
 
-        <div class="maps-pref" role="group" aria-label="Default maps app for directions">
-          <span class="maps-pref-label">Directions in</span>
-          <div class="seg" id="mapsPref">
-            <button type="button" data-maps="apple" aria-pressed="false">Apple Maps</button>
-            <button type="button" data-maps="google" aria-pressed="false">Google Maps</button>
+        <div class="maps-pref-block">
+          <div class="maps-pref" role="group" aria-label="Default maps app for directions">
+            <span class="maps-pref-label">Directions in</span>
+            <div class="seg" id="mapsPref">
+              <button type="button" data-maps="apple" aria-pressed="false">Apple Maps</button>
+              <button type="button" data-maps="google" aria-pressed="false">Google Maps</button>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="maps-more-toggle"
+            id="mapsMoreToggle"
+            aria-expanded="false"
+            aria-controls="mapsMorePanel"
+          >
+            <span class="maps-more-label">More</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="maps-more-panel" id="mapsMorePanel" hidden>
+            <p class="maps-more-copy">
+              See directions in
+              <span class="maps-app-chip">Apple Maps</span>
+              <span class="maps-app-chip">Google Maps</span>
+              <span class="maps-app-chip">Waze</span>
+              <span class="maps-app-chip">HERE</span>
+              <span class="maps-app-chip">Citymapper</span>
+              <span class="maps-app-chip">Gaode</span>
+              <span class="maps-app-chip">Yandex</span>
+              <span class="maps-app-chip">2GIS</span>
+              <span class="maps-app-chip">Maps.me</span>
+              with Maplet.
+            </p>
+            <a class="maps-more-cta" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener">
+              Get Maplet to open in any of these apps
+            </a>
           </div>
         </div>
 

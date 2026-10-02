@@ -191,6 +191,21 @@
     });
   }
 
+  function setupMapsMore() {
+    const toggle = document.getElementById('mapsMoreToggle');
+    const panel = document.getElementById('mapsMorePanel');
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      const next = !open;
+      toggle.setAttribute('aria-expanded', String(next));
+      panel.hidden = !next;
+      const label = toggle.querySelector('.maps-more-label');
+      if (label) label.textContent = next ? 'Less' : 'More';
+    });
+  }
+
   function buildAddress(loc) {
     if (loc.address) return loc.address;
     const parts = [loc.landmarkName, loc.city, loc.state, loc.country].filter(Boolean);
@@ -544,7 +559,7 @@
     }
 
     function isChrome(target) {
-      return Boolean(target.closest('#sheetHandle, .sidebar-header, .maps-pref'));
+      return Boolean(target.closest('#sheetHandle, .sidebar-header, .maps-pref-block'));
     }
 
     function applyOffset(px) {
@@ -657,6 +672,7 @@
 
     setupBottomSheet();
     setupMapsPref();
+    setupMapsMore();
     showApp();
 
     // MapLibre measures its container at construct time. The layout starts

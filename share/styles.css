@@ -314,15 +314,19 @@ button { font-family: inherit; }
 /* Maps preference — iOS segmented control                                 */
 /* ---------------------------------------------------------------------- */
 
+.maps-pref-block {
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
 .maps-pref {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 10px 16px 12px;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-  background: var(--card-bg);
+  padding: 10px 16px 8px;
+  background: transparent;
 }
 
 .maps-pref-label {
@@ -330,6 +334,92 @@ button { font-family: inherit; }
   font-weight: 600;
   color: var(--text-secondary);
   white-space: nowrap;
+}
+
+.maps-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: calc(100% - 32px);
+  margin: 0 16px 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.maps-more-toggle:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.maps-more-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.maps-more-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.maps-more-toggle[aria-expanded="true"] {
+  margin-bottom: 6px;
+}
+
+.maps-more-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.maps-more-panel {
+  margin: 0 16px 12px;
+  padding: 12px 12px 11px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.maps-more-panel[hidden] {
+  display: none;
+}
+
+.maps-more-copy {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.maps-app-chip {
+  display: inline-block;
+  margin: 2px 2px 0 0;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.maps-more-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.maps-more-cta:hover {
+  text-decoration: underline;
 }
 
 .seg {
@@ -639,7 +729,7 @@ button { font-family: inherit; }
   }
 
   .sidebar-header,
-  .maps-pref {
+  .maps-pref-block {
     touch-action: none;
   }
 
@@ -648,7 +738,7 @@ button { font-family: inherit; }
   .folder-title-row { margin-bottom: 12px; }
 
   /* Keep the collapsed peek to title + CTAs; picker appears when expanded. */
-  .sidebar:not(.is-expanded) .maps-pref { display: none; }
+  .sidebar:not(.is-expanded) .maps-pref-block { display: none; }
 
   .location-list {
     touch-action: pan-y;
