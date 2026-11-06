@@ -46,7 +46,7 @@
     <div class="wrap doc-hero">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p>Last updated: August 2026 · App version 3.X</p>
+      <p>Last updated: November 2026 · Applies to the current App Store release</p>
     </div>
 
     <div class="wrap doc-layout">
@@ -72,7 +72,7 @@
         <p>This Privacy Policy explains how Maplet (“we,” “our,” or “us”) processes, uses, stores, and protects your information when you use the Maplet iOS app (the “App”).</p>
         <div class="callout">
           <p><strong>Key point:</strong> Maplet’s core features run on your device. We never store your personal data on our own servers.</p>
-          <p><strong>Exception:</strong> Anonymous analytics and crash data are transmitted to Google’s Firebase services, which act as our data processor solely for app-improvement purposes.</p>
+          <p><strong>Exception:</strong> If the App crashes, anonymous crash diagnostics may be sent to Google Firebase Crashlytics so we can fix the crash. The App Store build does not collect Firebase Analytics usage data. Analytics collection is off in that build.</p>
         </div>
 
         <h2 id="information">2. Information We Process</h2>
@@ -92,19 +92,19 @@
           <li>Journey plans and checklists</li>
         </ul>
 
-        <h3>2.3 App Usage Data (Anonymous)</h3>
-        <p>Collected via Firebase Analytics and Firebase Crashlytics:</p>
+        <h3>2.3 Crash Diagnostics</h3>
+        <p>The released App does not send usage events to Firebase Analytics. We do not collect screen flows, feature-usage events, or a usage history from App Store installs.</p>
+        <p>Firebase Crashlytics may receive, only when the App crashes:</p>
         <ul>
-          <li>Screen-flow and feature-usage events (no personal identifiers)</li>
           <li>Crash logs and stack traces</li>
-          <li>Performance metrics (e.g., launch time)</li>
+          <li>The device model, iOS version, and App version attached to that crash report</li>
         </ul>
 
-        <h3>2.4 Device Information (Anonymous)</h3>
+        <h3>2.4 What We Do Not Collect in the Released App</h3>
         <ul>
-          <li>iOS device model &amp; OS version</li>
-          <li>App version</li>
-          <li>Basic network status (online / offline)</li>
+          <li>Firebase Analytics events (saves, searches, purchases, settings, or similar usage)</li>
+          <li>Advertising identifiers used for analytics</li>
+          <li>A profile of how you use the App</li>
         </ul>
 
         <h2 id="legal-bases">3. Legal Bases for Processing (EU / UK GDPR)</h2>
@@ -114,7 +114,7 @@
           </thead>
           <tbody>
             <tr><td>Core app functions (location, saving places, iCloud sync)</td><td>Performance of a contract (providing the service you requested)</td></tr>
-            <tr><td>Anonymous analytics &amp; crash diagnostics</td><td>Legitimate interests (maintaining and improving the App)</td></tr>
+            <tr><td>Crash diagnostics</td><td>Legitimate interests (finding and fixing crashes)</td></tr>
             <tr><td>Push notifications &amp; location services</td><td>Consent (granted via system prompts)</td></tr>
           </tbody>
         </table>
@@ -122,11 +122,8 @@
         <h2 id="use">4. How We Use Your Information</h2>
         <h3>4.1 Core Functionality (On-Device)</h3>
         <p>Display your location, save places, calculate distances, plan journeys, and sync via iCloud.</p>
-        <h3>4.2 App Improvement (Anonymous Off-Device)</h3>
-        <ul>
-          <li>Analyse aggregated usage patterns to prioritise features.</li>
-          <li>Diagnose and fix crashes or performance issues.</li>
-        </ul>
+        <h3>4.2 Crash Diagnostics (Off-Device)</h3>
+        <p>Diagnose and fix crashes. We do not use Firebase Analytics to study how the released App is used.</p>
         <h3>4.3 Personalisation (On-Device)</h3>
         <p>Remember your settings and customise the UI locally.</p>
 
@@ -138,7 +135,7 @@
           <tbody>
             <tr><td>Local (primary)</td><td>All personal data, photos, voice notes, preferences</td><td>Only you</td></tr>
             <tr><td>iCloud (optional)</td><td>Same data, encrypted in transit &amp; at rest by Apple</td><td>Only you (via Apple ID)</td></tr>
-            <tr><td>Firebase</td><td>Anonymous analytics &amp; crash data</td><td>Maplet dev team via Google Firebase console</td></tr>
+            <tr><td>Firebase Crashlytics</td><td>Crash diagnostics only (not usage analytics)</td><td>Maplet developer via the Google Firebase console</td></tr>
           </tbody>
         </table>
 
@@ -167,7 +164,7 @@
         </ul>
         <h3>7.3 California Residents (CCPA / CPRA)</h3>
         <ul>
-          <li><strong>Right to Know</strong> what categories of personal information we collect (only anonymous data).</li>
+          <li><strong>Right to Know</strong> what categories of personal information we collect. In the released App that is crash diagnostics, not a usage history.</li>
           <li><strong>Right to Delete</strong> personal information we hold.</li>
           <li><strong>Right to Correct</strong> inaccurate information.</li>
           <li><strong>Right to Opt-Out</strong> of sharing for cross-context behavioural advertising (we do not share).</li>
@@ -178,8 +175,8 @@
         <ul>
           <li><strong>On-Device:</strong> iOS file-system encryption &amp; Secure Enclave.</li>
           <li><strong>iCloud:</strong> End-to-end encryption for eligible data; TLS in transit.</li>
-          <li><strong>Firebase:</strong> TLS in transit; server-side encryption at rest.</li>
-          <li>Access to Firebase projects is limited to authorised Maplet engineers.</li>
+          <li><strong>Crashlytics:</strong> TLS in transit; server-side encryption at rest.</li>
+          <li>Access to the Firebase project is limited to the Maplet developer.</li>
         </ul>
 
         <h2 id="retention">9. Data Retention</h2>
@@ -189,17 +186,17 @@
           </thead>
           <tbody>
             <tr><td>Local &amp; iCloud data</td><td>Until you delete it or uninstall the App</td></tr>
-            <tr><td>Firebase Analytics</td><td>Up to 14 months (Google default)</td></tr>
+            <tr><td>Usage analytics</td><td>Not collected in the App Store build</td></tr>
             <tr><td>Crashlytics traces</td><td>90 days</td></tr>
           </tbody>
         </table>
-        <p>You may request earlier deletion of Firebase data via email.</p>
+        <p>You may request earlier deletion of crash reports via email.</p>
 
         <h2 id="children">10. Children’s Privacy</h2>
         <p>We do not knowingly collect personal data from children under 13. If you believe such data has been provided, contact us and we will delete it promptly. Parents can monitor or disable location and iCloud usage in device settings.</p>
 
         <h2 id="transfers">11. International Transfers</h2>
-        <p>Firebase servers may be located outside your country. Transfers rely on Google’s EU Standard Contractual Clauses and other safeguards to ensure adequate protection.</p>
+        <p>Crash reports sent to Firebase may be processed outside your country. Transfers rely on Google’s EU Standard Contractual Clauses and other safeguards. Usage analytics are not part of that transfer, because the released App does not collect them.</p>
 
         <h2 id="changes">12. Changes to This Policy</h2>
         <p>We may update this Privacy Policy periodically. Material changes will be communicated by:</p>
