@@ -142,20 +142,26 @@
     <!-- =================================================================
          Hero
          ================================================================= -->
-    <section class="hero">
-      <div class="hero-glow" aria-hidden="true"></div>
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-contours" src="images/hero-contours.svg" alt="" width="1600" height="1000" />
+        <div class="hero-glow"></div>
+      </div>
       <div class="wrap hero-inner">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Maplet for iOS</p>
-          <h1>Offline Map Marker &amp; Route Planner for iOS</h1>
-          <h2 class="hero-punch">Save places, plan the routes, and use it without a signal.</h2>
-          <p class="hero-sub">
+        <div class="hero-copy">
+          <p class="eyebrow hero-in" style="--d: 0s">Maplet for iOS</p>
+          <h1 class="hero-title">
+            <span class="line"><span style="--d: .05s">Offline Map Marker</span></span>
+            <span class="line"><span style="--d: .15s">&amp; Route Planner for iOS</span></span>
+          </h1>
+          <h2 class="hero-punch hero-in" style="--d: .35s">Save places, plan the routes, and use it without a signal.</h2>
+          <p class="hero-sub hero-in" style="--d: .45s">
             Maplet is a map bookmark and GPS toolkit for travel, field work, and outdoor trips.
             Pin waypoints with notes and photos, optimize multi-stop routes, and keep every location
             on your device. No account required.
           </p>
 
-          <div class="hero-ctas">
+          <div class="hero-ctas hero-in" style="--d: .55s">
             <a class="btn btn-appstore" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="hero">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                 <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
@@ -167,16 +173,55 @@
             </a>
           </div>
 
-          <p class="hero-trust">Free to download · No account · Works fully offline</p>
+          <p class="hero-trust hero-in" style="--d: .65s">Free to download · No account · Works fully offline</p>
         </div>
 
-        <div class="hero-visual" data-reveal>
-          <div class="hero-visual-card">
-            <img src="images/MapletScr1.webp" alt="Maplet app showing saved locations, a Saved Places folder list, the Compass Target tool, and a multi-stop route on iPhone" width="1728" height="822" loading="eager" />
+        <div class="hero-stage" id="heroStage">
+          <div class="hero-rig" id="heroRig">
+            <div class="hero-phone hero-phone--left" style="--depth: -14">
+              <div class="hero-phone-inner">
+                <img src="images/MapletScreenshot2.webp" alt="Maplet Saved Places grid with photo cards, ratings, and distances" width="837" height="1718" fetchpriority="low" />
+              </div>
+            </div>
+            <div class="hero-phone hero-phone--right" style="--depth: -10">
+              <div class="hero-phone-inner">
+                <img src="images/MapletScreenshot4.webp" alt="Maplet optimized driving route across North America with numbered stops" width="886" height="1816" fetchpriority="low" />
+              </div>
+            </div>
+            <div class="hero-phone hero-phone--center" style="--depth: 18">
+              <div class="hero-phone-inner">
+                <img src="images/MapletScreenshot1.webp" alt="Maplet map screen with Save, Share, and flag actions over Palm Jumeirah, Dubai" width="1169" height="2164" fetchpriority="high" />
+              </div>
+            </div>
+            <div class="hero-pin" style="--depth: 34" aria-hidden="true">
+              <div class="hero-pin-float">
+                <span class="hero-pin-ripple"></span>
+                <span class="hero-pin-ripple"></span>
+                <span class="hero-pin-shadow"></span>
+                <svg class="hero-pin-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 2C10 2 5.5 6.8 5.5 12.6c0 7.8 9 16.4 10 17.3.3.3.7.3 1 0 1-.9 10-9.5 10-17.3C26.5 6.8 22 2 16 2Z" fill="url(#heroPinGradient)"/>
+                  <circle cx="16" cy="12.5" r="4.5" fill="#fff"/>
+                  <defs>
+                    <linearGradient id="heroPinGradient" x1="5.5" y1="2" x2="26.5" y2="29.9" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FF8A5B"/>
+                      <stop offset="1" stop-color="#FF5A36"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="wrap route-connector" data-route aria-hidden="true">
+      <svg viewBox="0 0 1000 160" preserveAspectRatio="none">
+        <path class="route-path" d="M160 6 C 160 96, 840 60, 840 154" />
+      </svg>
+      <span class="route-stop route-stop--a"></span>
+      <span class="route-stop route-stop--b"></span>
+    </div>
 
     <!-- =================================================================
          Features
@@ -238,68 +283,182 @@
     <!-- =================================================================
          Showcase rows
          ================================================================= -->
-    <section class="showcase">
+    <section class="story" id="story">
       <div class="wrap">
-        <div class="showcase-row" data-reveal>
-          <div class="showcase-copy">
-            <p class="eyebrow">Route planner</p>
-            <h2>Optimize multi-stop routes, then track the journey.</h2>
-            <p>
-              Pick pins from any folder and Maplet builds a driving or walking route between them.
-              Auto-optimize the stop order, check places off as you go, and hand the route to the
-              navigation app you already use.
-            </p>
-            <ul class="checklist">
-              <li>Multi-stop routes for road trips, deliveries, or trails</li>
-              <li>Live distance, ETA, and journey progress tracking</li>
-              <li>Open in Apple Maps, Google Maps, Waze, HERE, Gaode Maps, Baidu Maps, Yandex Maps, and more</li>
-            </ul>
-          </div>
-          <div class="showcase-media">
-            <img src="images/MapletScr4.webp" alt="Maplet multi-route planner, an optimized driving route, and journey progress tracking screens" loading="lazy" />
-          </div>
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">How it works</p>
+          <h2>From one dropped pin to the whole journey.</h2>
         </div>
 
-        <div class="showcase-row reverse" data-reveal>
-          <div class="showcase-copy">
-            <p class="eyebrow">Compass Target</p>
-            <h2>Navigate by bearing when you lose signal.</h2>
-            <p>
-              Compass Target is a GPS bearing tracker for the places you saved, plus the Sun, Moon,
-              Qibla, and your parked car. A compass overlay sits on the map, and arrival alerts fire
-              when you enter a 500&nbsp;m radius of a pin. No cell service required.
-            </p>
-            <ul class="checklist">
-              <li>Offline waypoint navigation by distance and bearing</li>
-              <li>Live compass overlay on the map</li>
-              <li>Arrival alerts even when the app is in the background</li>
-            </ul>
-          </div>
-          <div class="showcase-media">
-            <img src="images/MapletScr5.webp" alt="Maplet Compass Target tool showing distance and bearing to saved locations, alongside the live map view" loading="lazy" />
+        <div class="story-grid">
+          <ol class="story-steps">
+            <li class="story-step" data-step="0" id="save" data-reveal>
+              <div class="story-copy">
+                <span class="story-num">01</span>
+                <p class="eyebrow">Save</p>
+                <h3>Drop a pin anywhere. Keep it forever.</h3>
+                <p>
+                  Center the map on a spot and save it with notes, photos, voice memos, and a rating.
+                  Every pin keeps its coordinates, address, and local time zone, even offline.
+                </p>
+                <ul class="checklist">
+                  <li>Temporary and persistent flags for quick marks</li>
+                  <li>Notes, photos, voice memos, and 1–5 star ratings</li>
+                </ul>
+              </div>
+              <img class="story-shot-inline" src="images/MapletScreenshot1.webp" alt="Maplet map screen with Save, Share, and flag actions over Palm Jumeirah, Dubai" width="1169" height="2164" loading="lazy" />
+            </li>
+
+            <li class="story-step" data-step="1" id="organize" data-reveal>
+              <div class="story-copy">
+                <span class="story-num">02</span>
+                <p class="eyebrow">Organize</p>
+                <h3>Every place, sorted your way.</h3>
+                <p>
+                  Group pins into folders and categories, then browse them as a list, a photo grid,
+                  or by folder. Sort by distance to find what’s nearest right now.
+                </p>
+                <ul class="checklist">
+                  <li>List, grid, folder, and photo views</li>
+                  <li>Import GPX, KML, and CSV; export PDF or CSV</li>
+                </ul>
+              </div>
+              <img class="story-shot-inline" src="images/MapletScreenshot2.webp" alt="Maplet Saved Places grid with photo cards, ratings, and distances" width="837" height="1718" loading="lazy" />
+            </li>
+
+            <li class="story-step" data-step="2" id="routes" data-reveal>
+              <div class="story-copy">
+                <span class="story-num">03</span>
+                <p class="eyebrow">Route planner</p>
+                <h3>Optimize multi-stop routes, then track the journey.</h3>
+                <p>
+                  Pick pins from any folder and Maplet builds a driving or walking route between them.
+                  Auto-optimize the stop order, check places off as you go, and hand the route to the
+                  navigation app you already use.
+                </p>
+                <ul class="checklist">
+                  <li>Live distance, ETA, and journey progress tracking</li>
+                  <li>Open in Apple Maps, Google Maps, Waze, HERE, Gaode Maps, Baidu Maps, Yandex Maps, and more</li>
+                </ul>
+              </div>
+              <img class="story-shot-inline" src="images/MapletScreenshot4.webp" alt="Maplet optimized driving route across North America with numbered stops and a Save as Journey Plan button" width="886" height="1816" loading="lazy" />
+            </li>
+
+            <li class="story-step" data-step="3" id="measure" data-reveal>
+              <div class="story-copy">
+                <span class="story-num">04</span>
+                <p class="eyebrow">Measure</p>
+                <h3>Measure distance and area, then walk or drive it.</h3>
+                <p>
+                  Drop points to measure the distance between them, or switch to Area for the size
+                  and perimeter of any shape. Tap walk or car to see the real route through your
+                  points, then tap Go to continue in your map app.
+                </p>
+                <ul class="checklist">
+                  <li>Segment lengths and a running total as you add points</li>
+                  <li>Area and perimeter for any shape you outline</li>
+                </ul>
+              </div>
+              <img class="story-shot-inline" src="images/MapletScreenshot5.webp" alt="Maplet measuring the area of a park in Washington, D.C.: 3.85 acres with a 542 m perimeter" width="678" height="1349" loading="lazy" />
+            </li>
+          </ol>
+
+          <div class="story-stage">
+            <div class="story-sticky">
+              <div class="story-rail" aria-hidden="true">
+                <span class="story-rail-fill" id="storyRailFill"></span>
+                <span class="story-rail-stop" data-step="0"></span>
+                <span class="story-rail-stop" data-step="1"></span>
+                <span class="story-rail-stop" data-step="2"></span>
+                <span class="story-rail-stop" data-step="3"></span>
+              </div>
+              <div class="story-phone">
+                <span class="story-glow" data-step="0" aria-hidden="true"></span>
+                <span class="story-glow" data-step="1" aria-hidden="true"></span>
+                <span class="story-glow" data-step="2" aria-hidden="true"></span>
+                <span class="story-glow" data-step="3" aria-hidden="true"></span>
+                <img class="story-shot is-active" data-step="0" data-fit="padded" src="images/MapletScreenshot1.webp" alt="Maplet map screen with Save, Share, and flag actions" width="1169" height="2164" loading="lazy" />
+                <img class="story-shot" data-step="1" src="images/MapletScreenshot2.webp" alt="Maplet Saved Places photo grid" width="837" height="1718" loading="lazy" />
+                <img class="story-shot" data-step="2" src="images/MapletScreenshot4.webp" alt="Maplet optimized multi-stop driving route" width="886" height="1816" loading="lazy" />
+                <img class="story-shot" data-step="3" src="images/MapletScreenshot5.webp" alt="Maplet area measurement of 3.85 acres" width="678" height="1349" loading="lazy" />
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="showcase-row" id="measure" data-reveal>
-          <div class="showcase-copy">
-            <p class="eyebrow">Measure</p>
-            <h2>Measure distance and area, then walk or drive it.</h2>
-            <p>
-              Drop points on the map to measure the distance between them, or switch to Area to
-              get the size and perimeter of any shape, from a park to a plot of land. Tap the walk
-              or car button to see the real route through your points with travel time, then tap
-              Go to continue in your map app.
-            </p>
-            <ul class="checklist">
-              <li>Segment lengths and a running total as you add points</li>
-              <li>Area and perimeter for any shape you outline</li>
-              <li>Walking or driving route with time and distance, ready to open in your map app</li>
+    <div class="wrap route-connector route-connector--flip" data-route aria-hidden="true">
+      <svg viewBox="0 0 1000 160" preserveAspectRatio="none">
+        <path class="route-path" d="M840 6 C 840 96, 160 60, 160 154" />
+      </svg>
+      <span class="route-stop route-stop--a"></span>
+      <span class="route-stop route-stop--b"></span>
+    </div>
+
+    <!-- Fades the whole screen to night while the Compass section is in view
+         (opacity only; driven by a CSS scroll timeline where supported). -->
+    <div class="lights-out" aria-hidden="true"></div>
+
+    <section class="compass-section" id="compass">
+      <div class="wrap compass-inner">
+        <div class="compass-copy" data-reveal>
+          <p class="eyebrow">Compass Target</p>
+          <h2>Navigate by bearing when you lose signal.</h2>
+          <p>
+            Compass Target is a GPS bearing tracker for the places you saved, plus the Sun, Moon,
+            Qibla, and your parked car. A compass overlay sits on the map, and arrival alerts fire
+            when you enter a 500&nbsp;m radius of a pin. No cell service required.
+          </p>
+          <ul class="checklist">
+            <li>Offline waypoint navigation by distance and bearing</li>
+            <li>Live compass overlay on the map</li>
+            <li>Arrival alerts even when the app is in the background</li>
+          </ul>
+          <p class="compass-hint">Move your cursor. The bearing follows it.</p>
+        </div>
+
+        <div class="compass-stage" data-reveal="zoom">
+          <div class="compass-dial" id="compassDial">
+            <svg class="compass-ring" viewBox="0 0 600 600" aria-hidden="true">
+              <circle class="dial-halo" cx="300" cy="300" r="282" />
+              <circle class="dial-rim" cx="300" cy="300" r="282" />
+              <circle class="dial-inner" cx="300" cy="300" r="214" />
+              <path class="dial-minor" d="M324.6 19.1L323.8 28M349 22.3L347.4 31.1M373 27.6L370.7 36.3M396.4 35L393.4 43.5M419.2 44.4L415.4 52.6M461.7 69L456.6 76.4M481.3 84L475.5 90.9M499.4 100.6L493 107M516 118.7L509.1 124.5M531 138.3L523.6 143.4M555.6 180.8L547.4 184.6M565 203.6L556.5 206.6M572.4 227L563.7 229.3M577.7 251L568.9 252.6M580.9 275.4L572 276.2M580.9 324.6L572 323.8M577.7 349L568.9 347.4M572.4 373L563.7 370.7M565 396.4L556.5 393.4M555.6 419.2L547.4 415.4M531 461.7L523.6 456.6M516 481.3L509.1 475.5M499.4 499.4L493 493M481.3 516L475.5 509.1M461.7 531L456.6 523.6M419.2 555.6L415.4 547.4M396.4 565L393.4 556.5M373 572.4L370.7 563.7M349 577.7L347.4 568.9M324.6 580.9L323.8 572M275.4 580.9L276.2 572M251 577.7L252.6 568.9M227 572.4L229.3 563.7M203.6 565L206.6 556.5M180.8 555.6L184.6 547.4M138.3 531L143.4 523.6M118.7 516L124.5 509.1M100.6 499.4L107 493M84 481.3L90.9 475.5M69 461.7L76.4 456.6M44.4 419.2L52.6 415.4M35 396.4L43.5 393.4M27.6 373L36.3 370.7M22.3 349L31.1 347.4M19.1 324.6L28 323.8M19.1 275.4L28 276.2M22.3 251L31.1 252.6M27.6 227L36.3 229.3M35 203.6L43.5 206.6M44.4 180.8L52.6 184.6M69 138.3L76.4 143.4M84 118.7L90.9 124.5M100.6 100.6L107 107M118.7 84L124.5 90.9M138.3 69L143.4 76.4M180.8 44.4L184.6 52.6M203.6 35L206.6 43.5M227 27.6L229.3 36.3M251 22.3L252.6 31.1M275.4 19.1L276.2 28"/>
+              <path class="dial-major" d="M441 55.8L432 71.4M544.2 159L528.6 168M544.2 441L528.6 432M441 544.2L432 528.6M159 544.2L168 528.6M55.8 441L71.4 432M55.8 159L71.4 168M159 55.8L168 71.4"/>
+              <g class="dial-deg"><text x="424" y="85.2">30</text><text x="514.8" y="176">60</text><text x="514.8" y="424">120</text><text x="424" y="514.8">150</text><text x="176" y="514.8">210</text><text x="85.2" y="424">240</text><text x="85.2" y="176">300</text><text x="176" y="85.2">330</text></g>
+              <g class="dial-cardinal">
+                <text class="is-north" x="300" y="44">N</text>
+                <text x="556" y="300">E</text>
+                <text x="300" y="556">S</text>
+                <text x="44" y="300">W</text>
+              </g>
+            </svg>
+
+            <!-- Rotates around the dial center; only its transform changes -->
+            <div class="compass-needle" aria-hidden="true">
+              <span class="compass-beam"></span>
+              <span class="compass-tip"></span>
+            </div>
+
+            <ul class="compass-targets" aria-label="Things Compass Target can point to">
+              <li class="ct ct--star"  style="left: 59.8%; top: 4%"     data-bearing="12"><span class="ct-icon"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 2.8z"/></svg></span><span class="ct-label">Saved place</span></li>
+              <li class="ct ct--home"  style="left: 89.9%; top: 25.1%"  data-bearing="58"><span class="ct-icon"><svg viewBox="0 0 24 24"><path d="M12 3.2 2.8 11h2.6v9h5v-5.5h3.2V20h5v-9h2.6L12 3.2z"/></svg></span><span class="ct-label">Home</span></li>
+              <li class="ct ct--sun"   style="left: 91.5%; top: 72.1%"  data-bearing="118"><span class="ct-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ct-label">Sun</span></li>
+              <li class="ct ct--car"   style="left: 56.5%; top: 96.5%"  data-bearing="172"><span class="ct-icon"><svg viewBox="0 0 24 24"><path d="M5.5 10.2 7 6.4C7.4 5.5 8.2 5 9.1 5h5.8c.9 0 1.7.5 2.1 1.4l1.5 3.8A2.5 2.5 0 0 1 20 12.5V17a1 1 0 0 1-1 1h-1.2a1 1 0 0 1-1-1v-1H7.2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4.5a2.5 2.5 0 0 1 1.5-2.3zM7.6 10h8.8l-1.1-2.9a.7.7 0 0 0-.6-.4H9.3a.7.7 0 0 0-.6.4L7.6 10zM7 14.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm10 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg></span><span class="ct-label">Parked car</span></li>
+              <li class="ct ct--moon"  style="left: 15.1%; top: 81.4%"  data-bearing="228"><span class="ct-icon"><svg viewBox="0 0 24 24"><path d="M20 14.6A8.5 8.5 0 0 1 9.4 4 8.5 8.5 0 1 0 20 14.6z"/></svg></span><span class="ct-label">Moon</span></li>
+              <li class="ct ct--qibla" style="left: 6.4%;  top: 32.4%"  data-bearing="292"><span class="ct-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 6.5v10.8L12 21l8-3.7V6.5L12 3zm0 2.2 5.3 2.3L12 9.8 6.7 7.5 12 5.2zM6 9.1l5 2.2v7.2l-5-2.3V9.1zm7 9.4v-7.2l5-2.2v7.1l-5 2.3z"/></svg></span><span class="ct-label">Qibla</span></li>
             </ul>
+
+            <div class="compass-phone">
+              <img src="images/MapletScreenshot6.webp" alt="Maplet Compass Target screen tracking four locations, with Sun, Moon, Qibla, home and car targets around a compass heading NW 321°" width="812" height="1665" loading="lazy" />
+            </div>
           </div>
-          <div class="showcase-media phone-pair">
-            <img src="images/pointArea.webp" alt="Maplet measuring the area of a city block: 3.82 acres with a 489 m perimeter and the length of each side labeled" width="1206" height="2622" loading="lazy" />
-            <img src="images/pointWalkRoute.webp" alt="Maplet measuring four numbered points: 1,059 m total distance and a 23 minute walking route drawn between them, with a Go button" width="1206" height="2622" loading="lazy" />
-          </div>
+
+          <p class="compass-readout" aria-hidden="true">
+            <span class="compass-readout-deg" id="compassDeg">321°</span>
+            <span class="compass-readout-dir" id="compassDir">NW</span>
+          </p>
         </div>
       </div>
     </section>
@@ -330,7 +489,7 @@
           </a>
         </div>
 
-        <div class="share-media" data-reveal>
+        <div class="share-media" data-reveal="iris">
           <div class="share-media-frame">
             <img src="images/MapletScr6.webp" alt="Maplet's Share Folder screen showing the Share via Deep Link option, next to the Export Options and Batch Import screens" loading="lazy" />
           </div>
@@ -370,7 +529,7 @@
          Closing CTA
          ================================================================= -->
     <section class="cta-band">
-      <div class="wrap cta-inner" data-reveal>
+      <div class="wrap cta-inner" data-reveal="zoom">
         <h2>Download Maplet for iPhone</h2>
         <p>Free to download. Your places stay on your device.</p>
         <a class="btn btn-light" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="cta_band">
