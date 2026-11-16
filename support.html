@@ -8,12 +8,17 @@
   <meta name="theme-color" content="#F5F5F7" />
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN"></script>
-  <script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Z6WJTWKN" data-cfasync="false"></script>
+  <script data-cfasync="false">
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', 'G-S4Z6WJTWKN');
+    gtag('config', 'G-S4Z6WJTWKN', {
+      send_page_view: true,
+      debug_mode: /[?&]ga_debug=1(?:&|$)/.test(location.search)
+    });
   </script>
 
   <link rel="canonical" href="https://maplet.net/support.html" />
@@ -212,6 +217,7 @@
       <nav class="main-nav" id="mainNav">
         <a href="index.html#features">Features</a>
         <a href="index.html#share-showcase">Sharing</a>
+        <a href="index.html#faq">FAQ</a>
         <a href="support.html" aria-current="page">Support</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -247,6 +253,7 @@
         <a href="#categories">Editing Categories</a>
         <a href="#journey">Smart Journey Planner</a>
         <a href="#multi-route">Multi-Stop Route Planning</a>
+        <a href="#measure">Measuring Distance &amp; Area</a>
         <a href="#importing">Batch Import (CSV, GPX, KML)</a>
         <a href="#exporting">Export to PDF &amp; CSV</a>
         <a href="#pro">Pro Subscription</a>
@@ -265,6 +272,7 @@
           <li>See distances to saved places and mark them as visited</li>
           <li>Open or share locations in any major map app (Apple Maps, Google Maps, Waze, HERE, Gaode Maps, Baidu Maps, Yandex Maps, and more)</li>
           <li>Plan journeys, optimize routes, and share folders with friends</li>
+          <li>Measure distance and area between points on the map</li>
           <li>Sync your data privately across Apple devices with iCloud</li>
           <li>Import locations from CSV, GPX, or KML files, and export to PDF or CSV</li>
         </ul>
@@ -466,6 +474,31 @@
         </ol>
         <p>See total distance and estimated time, then <strong>Open In</strong> Apple Maps, Google Maps, or Here WeGo, or <strong>Share</strong> a link for the route. Apple Maps is recommended for multi-stop routes.</p>
 
+        <h2 id="measure">Measuring Distance &amp; Area on the Map</h2>
+        <p>Drop points on the map to measure the distance between them or the area they enclose, then see the walking or driving route through them.</p>
+        <h3>Measuring distance</h3>
+        <ol>
+          <li>On the <strong>Map</strong> tab, open the measure tool.</li>
+          <li>Move the map so the <strong>+</strong> crosshair is over your first spot, then tap <strong>Add Point</strong>. Repeat for each point.</li>
+          <li>Each segment shows its length on the map, and the panel at the top shows the <strong>Total Distance</strong>.</li>
+        </ol>
+        <h3>Measuring area</h3>
+        <ul>
+          <li>Switch the panel from <strong>Distance</strong> to <strong>Area</strong>. Your points become a closed shape.</li>
+          <li>The panel shows the area and the perimeter, and each side is labeled with its length.</li>
+        </ul>
+        <h3>Walking and driving routes</h3>
+        <ul>
+          <li>Tap the <strong>walking</strong> or <strong>car</strong> button to see the real route through your points, with travel time and route distance.</li>
+          <li>Tap <strong>Go</strong> to continue to your map app with the points.</li>
+        </ul>
+        <h3>Editing your points</h3>
+        <ul>
+          <li><strong>Undo</strong> removes the last point. The <strong>trash</strong> button clears all points.</li>
+          <li>Tap <strong>Done</strong> to leave the measure tool.</li>
+        </ul>
+        <p>Measurements are approximate.</p>
+
         <h2 id="importing">Batch Importing Locations (CSV, GPX, and KML)</h2>
         <p>Import multiple locations at once from CSV, GPX, or KML files. Useful when migrating from another app or adding many places at once.</p>
         <ol>
@@ -604,6 +637,12 @@
           <span class="brand-name">Maplet</span>
         </a>
         <p>Map marker, route planner, and private location bookmarks.</p>
+        <a class="btn btn-appstore btn-sm" href="https://apps.apple.com/app/id6748853120" target="_blank" rel="noopener" data-analytics-placement="footer">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.94 1.36-1.93 2.72-3.48 2.75-1.52.03-2.01-.89-3.75-.89-1.73 0-2.28.87-3.72.92-1.5.05-2.64-1.47-3.59-2.83C2.79 17.09 1.2 12.98 3.02 10.16c.98-1.5 2.68-2.5 4.5-2.53 1.5-.03 2.94.98 3.75.98.81 0 2.54-1.22 4.28-1.04.73.03 2.77.3 4.09 2.24-.11.07-2.44 1.42-2.44 4.32.01 3.45 3.05 4.55 3.09 4.57z"/>
+          </svg>
+          <span class="appstore-text"><small>Download on the</small>App Store</span>
+        </a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
